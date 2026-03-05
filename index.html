@@ -234,13 +234,6 @@
             transform: translateX(0);
         }
         
-        /* Time Slot Selected */
-        .slot-selected {
-            background: rgba(0, 53, 102, 0.6) !important;
-            border-color: #7ccbfd !important;
-            color: white !important;
-        }
-        
         /* Smooth Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -262,6 +255,15 @@
         /* Swiper pagination */
         .swiper-pagination-bullet {
             background: #7ccbfd;
+        }
+
+        /* Cal.com embed container */
+        .cal-embed-container {
+            height: 700px;
+            width: 100%;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -638,9 +640,9 @@
                                 <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-navy-900 to-midnight">
                                     <div class="text-center p-8">
                                         <div class="w-24 h-24 mx-auto mb-6 border border-white/20 rounded-full flex items-center justify-center">
-                                            <span class="font-serif text-4xl text-white">M</span>
+                                            <span class="font-serif text-4xl text-white">V</span>
                                         </div>
-                                        <p class="font-serif text-2xl text-white mb-2">Miranda</p>
+                                        <p class="font-serif text-2xl text-white mb-2">Victor</p>
                                         <p class="text-sm text-slate-400 tracking-widest uppercase">Managing Consultant</p>
                                     </div>
                                 </div>
@@ -675,7 +677,7 @@
                         <p class="text-xl text-white font-light italic mb-4">
                             I had no idea this level of savings and control was possible. We turn the complexity of self-funding into a clear, actionable path forward.
                         </p>
-                        <p class="text-sm text-slate-500 tracking-widest uppercase">— Miranda, Managing Consultant</p>
+                        <p class="text-sm text-slate-500 tracking-widest uppercase">— Victor, Managing Consultant</p>
                     </div>
                 </div>
             </div>
@@ -729,7 +731,7 @@
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                             </div>
-                            <p class="text-slate-300 text-lg mb-6 font-light">"The 340B program alone cut our pharmacy spend by 35%. Miranda and her team made the transition seamless."</p>
+                            <p class="text-slate-300 text-lg mb-6 font-light">"The 340B program alone cut our pharmacy spend by 35%. Victor and his team made the transition seamless."</p>
                             <div class="flex items-center">
                                 <div class="w-12 h-12 bg-navy-700 rounded-full flex items-center justify-center text-white font-serif text-xl">RM</div>
                                 <div class="ml-4">
@@ -766,7 +768,7 @@
         </div>
     </section>
 
-    <!-- Consultation Section (Calendar & Booking) -->
+    <!-- Consultation Section (Cal.com Embed) -->
     <section id="consultation" class="py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-navy-950 to-midnight"></div>
         
@@ -811,136 +813,28 @@
                     </div>
                 </div>
 
-                <!-- Calendar -->
+                <!-- Calendar Column with Cal.com Embed -->
                 <div class="lg:col-span-8">
-                    <div class="glass-elite rounded-sm p-8">
-                        <div class="flex items-center justify-between mb-8">
-                            <h3 class="font-serif text-2xl text-white">Available Consultations</h3>
-                            <div class="flex items-center space-x-4 text-sm">
-                                <span class="flex items-center space-x-2 text-slate-400">
-                                    <span class="w-2 h-2 bg-azure-400 rounded-full"></span>
-                                    <span>Available</span>
-                                </span>
-                            </div>
-                        </div>
+                    <div class="glass-elite rounded-sm p-6 md:p-8">
+                        <h3 class="font-serif text-2xl text-white mb-6">Schedule Your Private Consultation</h3>
+                        <div class="cal-embed-container">
+                            <!-- Cal inline embed code begins -->
+                            <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-lone-star-benefits-trust-connector"></div>
+                            <script type="text/javascript">
+                              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                            Cal("init", "lone-star-benefits-trust-connector", {origin:"https://app.cal.com"});
 
-                        <!-- Week 1 -->
-                        <div class="mb-8">
-                            <h4 class="text-sm text-slate-500 tracking-widest uppercase mb-4 border-b border-white/5 pb-2">Week of March 9</h4>
-                            <div class="grid sm:grid-cols-3 gap-4">
-                                <div>
-                                    <p class="text-xs text-slate-600 uppercase tracking-wider mb-3">Monday 3/9</p>
-                                    <div class="space-y-2">
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">9:00 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">10:30 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">1:00 PM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">2:30 PM</button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-600 uppercase tracking-wider mb-3">Tuesday 3/10</p>
-                                    <div class="space-y-2">
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">9:00 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">10:30 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">1:00 PM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">2:30 PM</button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-600 uppercase tracking-wider mb-3">Thursday 3/12</p>
-                                    <div class="space-y-2">
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">9:00 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">10:30 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">1:00 PM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">2:30 PM</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                              Cal.ns["lone-star-benefits-trust-connector"]("inline", {
+                                elementOrSelector:"#my-cal-inline-lone-star-benefits-trust-connector",
+                                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                                calLink: "partner-discovery/lone-star-benefits-trust-connector",
+                              });
 
-                        <!-- Week 2 -->
-                        <div>
-                            <h4 class="text-sm text-slate-500 tracking-widest uppercase mb-4 border-b border-white/5 pb-2">Week of March 16</h4>
-                            <div class="grid sm:grid-cols-3 gap-4">
-                                <div>
-                                    <p class="text-xs text-slate-600 uppercase tracking-wider mb-3">Monday 3/16</p>
-                                    <div class="space-y-2">
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">9:00 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">10:30 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">1:00 PM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">2:30 PM</button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-600 uppercase tracking-wider mb-3">Tuesday 3/17</p>
-                                    <div class="space-y-2">
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">9:00 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">10:30 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">1:00 PM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">2:30 PM</button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-slate-600 uppercase tracking-wider mb-3">Thursday 3/19</p>
-                                    <div class="space-y-2">
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">9:00 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">10:30 AM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">1:00 PM</button>
-                                        <button onclick="selectSlot(this)" class="slot-btn w-full py-3 px-4 border border-white/10 rounded-sm text-sm text-slate-300 hover:border-azure-400/50 hover:text-white transition-all text-left">2:30 PM</button>
-                                    </div>
-                                </div>
-                            </div>
+                              Cal.ns["lone-star-benefits-trust-connector"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+                            </script>
+                            <!-- Cal inline embed code ends -->
                         </div>
-
-                        <!-- Selection Form -->
-                        <div id="bookingForm" class="hidden mt-8 pt-8 border-t border-white/10">
-                            <div class="flex items-center justify-between mb-6">
-                                <h4 class="text-white font-serif text-xl">Confirm Appointment</h4>
-                                <button onclick="closeBooking()" class="text-slate-500 hover:text-white">
-                                    <i data-lucide="x" class="w-5 h-5"></i>
-                                </button>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label class="block text-xs text-slate-500 uppercase tracking-wider mb-2">Selected Time</label>
-                                    <p id="selectedTimeDisplay" class="text-white text-lg"></p>
-                                </div>
-                                <div>
-                                    <label class="block text-xs text-slate-500 uppercase tracking-wider mb-2">Attendees</label>
-                                    <div class="flex flex-wrap gap-2">
-                                        <label class="flex items-center space-x-2 text-sm text-slate-300 cursor-pointer">
-                                            <input type="checkbox" class="rounded border-white/20 bg-transparent text-azure-400 focus:ring-azure-400">
-                                            <span>Superintendent</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm text-slate-300 cursor-pointer">
-                                            <input type="checkbox" class="rounded border-white/20 bg-transparent text-azure-400 focus:ring-azure-400">
-                                            <span>CFO</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 text-sm text-slate-300 cursor-pointer">
-                                            <input type="checkbox" class="rounded border-white/20 bg-transparent text-azure-400 focus:ring-azure-400">
-                                            <span>HR Director</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label class="block text-xs text-slate-500 uppercase tracking-wider mb-2">Name</label>
-                                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 text-white focus:border-azure-400/50 focus:outline-none transition-colors" placeholder="Your name">
-                                </div>
-                                <div>
-                                    <label class="block text-xs text-slate-500 uppercase tracking-wider mb-2">Email</label>
-                                    <input type="email" class="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 text-white focus:border-azure-400/50 focus:outline-none transition-colors" placeholder="your@district.edu">
-                                </div>
-                            </div>
-                            <div class="mb-6">
-                                <label class="block text-xs text-slate-500 uppercase tracking-wider mb-2">District</label>
-                                <input type="text" class="w-full bg-white/5 border border-white/10 rounded-sm px-4 py-3 text-white focus:border-azure-400/50 focus:outline-none transition-colors" placeholder="School District Name">
-                            </div>
-                            <button onclick="submitBooking()" class="w-full btn-primary py-4 text-white rounded-sm tracking-wide">
-                                Confirm Private Consultation
-                            </button>
-                        </div>
+                        <p class="text-xs text-slate-500 mt-4">Select a time that works best for you. You will receive a calendar invitation immediately.</p>
                     </div>
                 </div>
             </div>
@@ -982,7 +876,7 @@
                     <div class="space-y-4 text-sm">
                         <div class="flex items-start space-x-3 text-slate-400">
                             <i data-lucide="user" class="w-4 h-4 mt-0.5 text-azure-400"></i>
-                            <span>Miranda, Managing Consultant</span>
+                            <span>Victor, Managing Consultant</span>
                         </div>
                         <div class="flex items-start space-x-3 text-slate-400">
                             <i data-lucide="phone" class="w-4 h-4 mt-0.5 text-azure-400"></i>
@@ -1017,7 +911,7 @@
         </div>
     </footer>
 
-    <!-- Toast Notification -->
+    <!-- Toast Notification (kept for potential use, though Cal.com handles booking) -->
     <div id="toast" class="fixed bottom-8 right-8 glass-elite px-6 py-4 rounded-sm transform translate-y-24 transition-transform duration-300 z-50 flex items-center space-x-3 border-l-2 border-azure-400">
         <i data-lucide="check-circle" class="w-5 h-5 text-azure-400"></i>
         <div>
@@ -1127,47 +1021,6 @@
             },
         });
 
-        // Slot Selection
-        let selectedSlot = null;
-
-        function selectSlot(btn) {
-            // Clear previous
-            document.querySelectorAll('.slot-btn').forEach(b => {
-                b.classList.remove('slot-selected');
-            });
-            
-            // Select new
-            btn.classList.add('slot-selected');
-            selectedSlot = btn.textContent;
-            
-            // Show form
-            const form = document.getElementById('bookingForm');
-            const display = document.getElementById('selectedTimeDisplay');
-            form.classList.remove('hidden');
-            display.textContent = selectedSlot;
-            
-            // Scroll to form
-            form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-
-        function closeBooking() {
-            document.getElementById('bookingForm').classList.add('hidden');
-            document.querySelectorAll('.slot-btn').forEach(b => {
-                b.classList.remove('slot-selected');
-            });
-        }
-
-        function submitBooking() {
-            const toast = document.getElementById('toast');
-            toast.classList.remove('translate-y-24');
-            
-            setTimeout(() => {
-                toast.classList.add('translate-y-24');
-            }, 4000);
-            
-            closeBooking();
-        }
-
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1181,6 +1034,9 @@
                 }
             });
         });
+
+        // Note: The Cal.com embed script is already included above.
+        // No additional slot selection functions needed.
     </script>
 </body>
 </html>
