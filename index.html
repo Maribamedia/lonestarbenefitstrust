@@ -30,13 +30,13 @@
             theme: {
                 extend: {
                     colors: {
-                        midnight: '#000814',
+                        midnight: '#0A1128',
                         navy: {
-                            950: '#001d3d',
-                            900: '#003566',
-                            800: '#004488',
-                            700: '#0055aa',
-                            600: '#0066cc',
+                            950: '#0B1A3A',
+                            900: '#112B4F',
+                            800: '#1A3D63',
+                            700: '#23507A',
+                            600: '#2E6391',
                         },
                         azure: {
                             50: '#f0f7ff',
@@ -46,6 +46,8 @@
                             400: '#36b3fa',
                             500: '#0c99eb',
                         },
+                        star: '#D4AF37',
+                        lone: '#B22234',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -58,48 +60,48 @@
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { overflow-x: hidden; background: #000814; }
+        html, body { overflow-x: hidden; background: #0A1128; }
         
         /* Luxury Gradients */
-        .gradient-luxury { background: linear-gradient(135deg, #001d3d 0%, #000814 50%, #001d3d 100%); }
+        .gradient-luxury { background: linear-gradient(135deg, #0B1A3A 0%, #0A1128 50%, #112B4F 100%); }
         .text-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #7ccbfd 50%, #ffffff 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #D4AF37 30%, #7ccbfd 70%, #ffffff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             background-size: 200% auto;
-            animation: shine 5s linear infinite;
+            animation: shine 6s linear infinite;
         }
         @keyframes shine { to { background-position: 200% center; } }
         
         /* Glass Morphism */
         .glass-elite {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(10, 17, 40, 0.6);
             backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
         }
         .glass-card {
             background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glass-card:hover {
             background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
-            border-color: rgba(124, 203, 253, 0.2);
+            border-color: rgba(212, 175, 55, 0.4);
             transform: translateY(-4px);
         }
         
         /* Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, #003566 0%, #004488 100%);
-            border: 1px solid rgba(124, 203, 253, 0.3);
+            background: linear-gradient(135deg, #112B4F 0%, #1A3D63 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-primary:hover {
-            background: linear-gradient(135deg, #004488 0%, #0055aa 100%);
-            border-color: rgba(124, 203, 253, 0.6);
-            box-shadow: 0 10px 40px -10px rgba(0, 85, 170, 0.5);
+            background: linear-gradient(135deg, #1A3D63 0%, #23507A 100%);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.3);
             transform: translateY(-2px);
         }
         .btn-secondary {
@@ -108,7 +110,7 @@
         }
         .btn-secondary:hover {
             background: rgba(255,255,255,0.05);
-            border-color: rgba(124, 203, 253, 0.4);
+            border-color: rgba(212, 175, 55, 0.4);
         }
         
         /* Typography */
@@ -127,9 +129,10 @@
         /* Grid Pattern */
         .grid-subtle {
             background-image: 
-                linear-gradient(rgba(124, 203, 253, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(124, 203, 253, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.02) 0%, transparent 30%),
+                linear-gradient(rgba(124, 203, 253, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 203, 253, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 60px 60px, 60px 60px;
         }
         
         /* Scroll Progress */
@@ -138,13 +141,13 @@
             top: 0;
             left: 0;
             height: 2px;
-            background: linear-gradient(90deg, #003566, #7ccbfd);
+            background: linear-gradient(90deg, #112B4F, #D4AF37, #7ccbfd);
             z-index: 100;
             width: 0%;
         }
         
         /* Selection */
-        ::selection { background: rgba(124, 203, 253, 0.3); color: white; }
+        ::selection { background: rgba(212, 175, 55, 0.3); color: white; }
         
         /* Hover Image Effect */
         .img-reveal { overflow: hidden; }
@@ -158,7 +161,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 6rem;
             line-height: 1;
-            color: rgba(124, 203, 253, 0.2);
+            color: rgba(212, 175, 55, 0.2);
         }
         
         /* Navigation Link Effect */
@@ -173,7 +176,7 @@
             left: 0;
             width: 100%;
             height: 1px;
-            background: #7ccbfd;
+            background: #D4AF37;
             transform: translateX(-100%);
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -181,12 +184,12 @@
         
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #000814; }
-        ::-webkit-scrollbar-thumb { background: #003566; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #004488; }
+        ::-webkit-scrollbar-track { background: #0A1128; }
+        ::-webkit-scrollbar-thumb { background: #1A3D63; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2E6391; }
         
         /* Swiper pagination */
-        .swiper-pagination-bullet { background: #7ccbfd; }
+        .swiper-pagination-bullet { background: #D4AF37; }
         
         /* Trust indicator hover */
         .trust-item {
@@ -194,6 +197,11 @@
         }
         .trust-item:hover {
             transform: translateY(-4px);
+        }
+        
+        .logo-star {
+            color: #D4AF37;
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.3));
         }
     </style>
 </head>
@@ -206,18 +214,22 @@
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <a href="#" class="flex items-center space-x-4 group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <div class="w-10 h-10 border border-white/20 rounded-sm flex items-center justify-center group-hover:border-azure-300/50 transition-colors">
-                        <span class="font-serif text-xl text-white font-semibold">L</span>
+                <a href="#" class="flex items-center space-x-3 group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="flex items-center justify-center w-10 h-10 border border-star/30 rounded-sm group-hover:border-star/70 transition-colors">
+                        <i data-lucide="star" class="w-6 h-6 logo-star"></i>
                     </div>
-                    <div class="hidden sm:block">
-                        <p class="text-white font-serif text-lg tracking-wide">Lone Star Benefits Trust</p>
-                        <p class="text-xs text-slate-500 tracking-widest uppercase">Executive Division</p>
+                    <div class="flex flex-col">
+                        <div class="flex items-baseline space-x-1">
+                            <span class="font-serif text-white text-xl tracking-wide font-semibold">LONE STAR</span>
+                            <span class="text-star text-xs ml-1">✦</span>
+                        </div>
+                        <div class="flex flex-wrap items-baseline gap-x-2">
+                            <span class="font-serif text-white text-lg tracking-wider">BENEFITS TRUST</span>
+                            <span class="text-[10px] text-slate-400 tracking-[.2em] uppercase hidden sm:inline">PROTECTION · STABILITY · STEWARDSHIP</span>
+                        </div>
                     </div>
                 </a>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#challenge" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Challenge</a>
                     <a href="#solutions" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Solutions</a>
@@ -230,14 +242,12 @@
                     </a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="mobileMenuBtn" class="md:hidden text-white p-2">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full glass-elite border-t border-white/5">
             <div class="px-6 py-8 space-y-4">
                 <a href="#challenge" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Challenge</a>
@@ -253,16 +263,15 @@
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
         <div class="absolute inset-0 gradient-luxury"></div>
-        <div class="absolute inset-0 grid-subtle opacity-50"></div>
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy-900/20 to-transparent"></div>
+        <div class="absolute inset-0 grid-subtle opacity-60"></div>
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy-900/30 to-transparent"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <!-- Content -->
                 <div class="lg:col-span-7 space-y-8">
-                    <div class="inline-flex items-center space-x-3 px-4 py-2 border border-white/10 rounded-sm">
-                        <span class="w-1.5 h-1.5 bg-azure-400 rounded-full animate-pulse"></span>
-                        <span class="text-xs text-slate-400 tracking-widest uppercase">For District Leadership</span>
+                    <div class="inline-flex items-center space-x-3 px-4 py-2 border border-star/20 rounded-sm">
+                        <i data-lucide="star" class="w-3.5 h-3.5 text-star animate-pulse"></i>
+                        <span class="text-xs text-slate-300 tracking-widest uppercase">For District Leadership</span>
                     </div>
                     
                     <h1 class="heading-display text-5xl md:text-6xl lg:text-7xl text-white">
@@ -275,6 +284,10 @@
                         Sophisticated self-funded benefit strategies designed exclusively for Texas and Oklahoma school districts with 500+ employees. Transform your healthcare spend from a liability into a strategic advantage.
                     </p>
 
+                    <div class="border-l-2 border-star/40 pl-5 py-1 text-sm text-slate-400 italic max-w-xl">
+                        “Lone Star Benefits Trust supports Texas school districts with self-funded medical plan strategy designed for stability, transparency, and long-term cost control.”
+                    </div>
+
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="btn-primary px-8 py-4 text-white text-sm tracking-wide rounded-sm inline-flex items-center justify-center space-x-2 group">
                             <span>Private Consultation</span>
@@ -285,7 +298,6 @@
                         </a>
                     </div>
 
-                    <!-- Trust Indicators -->
                     <div class="pt-12 flex items-center space-x-8">
                         <div class="text-center trust-item">
                             <p class="text-3xl font-serif text-white countup" data-target="30">0</p>
@@ -293,7 +305,7 @@
                         </div>
                         <div class="w-px h-10 bg-white/10"></div>
                         <div class="text-center trust-item">
-                            <p class="text-3xl font-serif text-white countup" data-target="100">0</p>
+                            <p class="text-3xl font-serif text-white countup" data-target="200">0</p>
                             <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">Districts</p>
                         </div>
                         <div class="w-px h-10 bg-white/10"></div>
@@ -304,7 +316,6 @@
                     </div>
                 </div>
 
-                <!-- Visual -->
                 <div class="lg:col-span-5 hidden lg:block">
                     <div class="relative">
                         <div class="absolute -inset-4 bg-gradient-to-r from-navy-900 to-midnight rounded-sm blur-2xl opacity-50"></div>
@@ -312,10 +323,10 @@
                             <div class="img-reveal aspect-[4/5] rounded-sm overflow-hidden">
                                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=750&fit=crop" alt="Executive Consultant" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                             </div>
-                            <div class="absolute bottom-6 left-6 right-6 glass-elite p-6 rounded-sm">
+                            <div class="absolute bottom-6 left-6 right-6 glass-elite p-6 rounded-sm border-star/20">
                                 <p class="text-sm text-slate-400 mb-1">Average Client Savings</p>
                                 <p class="text-3xl font-serif text-white">25-40%</p>
-                                <div class="mt-3 h-px bg-gradient-to-r from-azure-400/50 to-transparent"></div>
+                                <div class="mt-3 h-px bg-gradient-to-r from-star/50 to-transparent"></div>
                             </div>
                         </div>
                     </div>
@@ -323,20 +334,19 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 opacity-40">
             <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
         </div>
     </section>
 
-    <!-- The Challenge Section (Carrier Profits) -->
+    <!-- Challenge Section -->
     <section id="challenge" class="py-32 relative">
         <div class="absolute inset-0 bg-midnight"></div>
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-star/20 to-transparent"></div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div class="max-w-3xl mb-20">
-                <p class="text-azure-400 text-sm tracking-widest uppercase mb-4">The Current Landscape</p>
+                <p class="text-star text-sm tracking-widest uppercase mb-4">The Current Landscape</p>
                 <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">
                     The Fully Insured <span class="italic text-slate-400">Paradox</span>
                 </h2>
@@ -346,76 +356,20 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-px bg-white/5 rounded-sm overflow-hidden">
-                <!-- Carrier 1 -->
                 <div class="bg-midnight p-8 md:p-10 group hover:bg-navy-950/50 transition-colors">
-                    <div class="flex items-center justify-between mb-8">
-                        <span class="text-xs text-slate-500 tracking-widest">NYSE: UNH</span>
-                        <i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-azure-400 transition-colors"></i>
-                    </div>
+                    <div class="flex items-center justify-between mb-8"><span class="text-xs text-slate-500 tracking-widest">NYSE: UNH</span><i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-star"></i></div>
                     <h3 class="font-serif text-2xl text-white mb-6">UnitedHealth Group</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between items-baseline mb-2">
-                                <span class="text-sm text-slate-500">Annual Revenue</span>
-                                <span class="text-2xl font-serif text-white">$447.6B</span>
-                            </div>
-                            <div class="h-px bg-white/10"></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-baseline">
-                                <span class="text-sm text-slate-500">Net Profit</span>
-                                <span class="text-2xl font-serif text-azure-400">$12.1B</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="space-y-4"><div><div class="flex justify-between items-baseline mb-2"><span class="text-sm text-slate-500">Annual Revenue</span><span class="text-2xl font-serif text-white">$447.6B</span></div><div class="h-px bg-white/10"></div></div><div><div class="flex justify-between items-baseline"><span class="text-sm text-slate-500">Net Profit</span><span class="text-2xl font-serif text-star">$12.1B</span></div></div></div>
                 </div>
-
-                <!-- Carrier 2 -->
                 <div class="bg-midnight p-8 md:p-10 group hover:bg-navy-950/50 transition-colors">
-                    <div class="flex items-center justify-between mb-8">
-                        <span class="text-xs text-slate-500 tracking-widest">NYSE: CI</span>
-                        <i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-azure-400 transition-colors"></i>
-                    </div>
+                    <div class="flex items-center justify-between mb-8"><span class="text-xs text-slate-500 tracking-widest">NYSE: CI</span><i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-star"></i></div>
                     <h3 class="font-serif text-2xl text-white mb-6">Cigna</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between items-baseline mb-2">
-                                <span class="text-sm text-slate-500">Quarterly Net</span>
-                                <span class="text-2xl font-serif text-white">$1.3B</span>
-                            </div>
-                            <div class="h-px bg-white/10"></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-baseline">
-                                <span class="text-sm text-slate-500">Margin Expansion</span>
-                                <span class="text-2xl font-serif text-azure-400">+18%</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="space-y-4"><div><div class="flex justify-between items-baseline mb-2"><span class="text-sm text-slate-500">Quarterly Net</span><span class="text-2xl font-serif text-white">$1.3B</span></div><div class="h-px bg-white/10"></div></div><div><div class="flex justify-between items-baseline"><span class="text-sm text-slate-500">Margin Expansion</span><span class="text-2xl font-serif text-star">+18%</span></div></div></div>
                 </div>
-
-                <!-- Carrier 3 -->
                 <div class="bg-midnight p-8 md:p-10 group hover:bg-navy-950/50 transition-colors">
-                    <div class="flex items-center justify-between mb-8">
-                        <span class="text-xs text-slate-500 tracking-widest">NYSE: CVS</span>
-                        <i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-azure-400 transition-colors"></i>
-                    </div>
+                    <div class="flex items-center justify-between mb-8"><span class="text-xs text-slate-500 tracking-widest">NYSE: CVS</span><i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-star"></i></div>
                     <h3 class="font-serif text-2xl text-white mb-6">CVS Health</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between items-baseline mb-2">
-                                <span class="text-sm text-slate-500">Operating Income</span>
-                                <span class="text-2xl font-serif text-white">$1.3B+</span>
-                            </div>
-                            <div class="h-px bg-white/10"></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between items-baseline">
-                                <span class="text-sm text-slate-500">Pharmacy Growth</span>
-                                <span class="text-2xl font-serif text-azure-400">+24%</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="space-y-4"><div><div class="flex justify-between items-baseline mb-2"><span class="text-sm text-slate-500">Operating Income</span><span class="text-2xl font-serif text-white">$1.3B+</span></div><div class="h-px bg-white/10"></div></div><div><div class="flex justify-between items-baseline"><span class="text-sm text-slate-500">Pharmacy Growth</span><span class="text-2xl font-serif text-star">+24%</span></div></div></div>
                 </div>
             </div>
 
@@ -427,129 +381,20 @@
         </div>
     </section>
 
-    <!-- Solutions Section (Four Pillars) -->
+    <!-- Solutions Section -->
     <section id="solutions" class="py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-midnight via-navy-950 to-midnight"></div>
-        
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <p class="text-azure-400 text-sm tracking-widest uppercase mb-4">Strategic Solutions</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">
-                    Four Pillars of <span class="italic">Financial Control</span>
-                </h2>
-                <p class="text-slate-400 text-lg font-light">
-                    Comprehensive strategies designed specifically for the unique challenges facing public school districts.
-                </p>
+                <p class="text-star text-sm tracking-widest uppercase mb-4">Strategic Solutions</p>
+                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Four Pillars of <span class="italic">Financial Control</span></h2>
+                <p class="text-slate-400 text-lg font-light">Comprehensive strategies designed specifically for the unique challenges facing public school districts.</p>
             </div>
-
             <div class="grid lg:grid-cols-2 gap-6">
-                <!-- Solution 1: Self-Funded -->
-                <div class="glass-card rounded-sm p-10 group">
-                    <div class="flex items-start justify-between mb-8">
-                        <div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-azure-400/50 transition-colors">
-                            <i data-lucide="shield" class="w-6 h-6 text-azure-400"></i>
-                        </div>
-                        <span class="text-xs text-azure-400 tracking-widest uppercase border border-azure-400/20 px-3 py-1 rounded-sm">Foundation</span>
-                    </div>
-                    <h3 class="font-serif text-3xl text-white mb-4 group-hover:text-azure-200 transition-colors">Self-Funded Medical Plans</h3>
-                    <p class="text-slate-400 leading-relaxed mb-8 font-light">
-                        Eliminate carrier profit loads and premium taxes. Gain complete visibility into claims data and retain investment income on reserves. Designed for districts with 500+ employees.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-3 text-sm text-slate-300">
-                            <div class="w-1 h-1 bg-azure-400 rounded-full"></div>
-                            <span>Full claims transparency and data ownership</span>
-                        </div>
-                        <div class="flex items-center space-x-3 text-sm text-slate-300">
-                            <div class="w-1 h-1 bg-azure-400 rounded-full"></div>
-                            <span>Custom plan design flexibility</span>
-                        </div>
-                        <div class="flex items-center space-x-3 text-sm text-slate-300">
-                            <div class="w-1 h-1 bg-azure-400 rounded-full"></div>
-                            <span>Advanced stop-loss protection</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 2: 340B -->
-                <div class="glass-card rounded-sm p-10 group">
-                    <div class="flex items-start justify-between mb-8">
-                        <div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-azure-400/50 transition-colors">
-                            <i data-lucide="pill" class="w-6 h-6 text-azure-400"></i>
-                        </div>
-                        <span class="text-xs text-azure-400 tracking-widest uppercase border border-azure-400/20 px-3 py-1 rounded-sm">Optimization</span>
-                    </div>
-                    <h3 class="font-serif text-3xl text-white mb-4 group-hover:text-azure-200 transition-colors">340B Drug Pricing</h3>
-                    <p class="text-slate-400 leading-relaxed mb-8 font-light">
-                        Access federally mandated drug pricing discounts through strategic partnerships with 340B-eligible health systems. Reduce pharmacy spend by 25-50% without compromising care quality.
-                    </p>
-                    <div class="flex items-center space-x-8 pt-4 border-t border-white/5">
-                        <div>
-                            <p class="text-3xl font-serif text-white">25-50%</p>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider">Average Savings</p>
-                        </div>
-                        <div>
-                            <p class="text-3xl font-serif text-white">$2M+</p>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider">Annual Impact</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 3: DPC -->
-                <div class="glass-card rounded-sm p-10 group">
-                    <div class="flex items-start justify-between mb-8">
-                        <div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-azure-400/50 transition-colors">
-                            <i data-lucide="heart-pulse" class="w-6 h-6 text-azure-400"></i>
-                        </div>
-                        <span class="text-xs text-azure-400 tracking-widest uppercase border border-azure-400/20 px-3 py-1 rounded-sm">Prevention</span>
-                    </div>
-                    <h3 class="font-serif text-3xl text-white mb-4 group-hover:text-azure-200 transition-colors">Direct Primary Care</h3>
-                    <p class="text-slate-400 leading-relaxed mb-8 font-light">
-                        Provide unlimited primary care access for a flat per-employee fee. Reduce emergency room utilization by 40% and improve chronic condition management through consistent, accessible care.
-                    </p>
-                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/5">
-                        <div class="text-center">
-                            <p class="text-2xl font-serif text-white">↓40%</p>
-                            <p class="text-xs text-slate-500 uppercase mt-1">ER Visits</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-2xl font-serif text-white">↓30%</p>
-                            <p class="text-xs text-slate-500 uppercase mt-1">Specialist Ref</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-2xl font-serif text-white">↑85%</p>
-                            <p class="text-xs text-slate-500 uppercase mt-1">Satisfaction</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Solution 4: P&C -->
-                <div class="glass-card rounded-sm p-10 group">
-                    <div class="flex items-start justify-between mb-8">
-                        <div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-azure-400/50 transition-colors">
-                            <i data-lucide="building-2" class="w-6 h-6 text-azure-400"></i>
-                        </div>
-                        <span class="text-xs text-azure-400 tracking-widest uppercase border border-azure-400/20 px-3 py-1 rounded-sm">Protection</span>
-                    </div>
-                    <h3 class="font-serif text-3xl text-white mb-4 group-hover:text-azure-200 transition-colors">P&C and Surety Bonds</h3>
-                    <p class="text-slate-400 leading-relaxed mb-8 font-light">
-                        Comprehensive commercial property and casualty coverage tailored to educational institutions. Surety bonds ensuring compliance and protecting district assets.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-3 text-sm text-slate-300">
-                            <div class="w-1 h-1 bg-azure-400 rounded-full"></div>
-                            <span>Property & Casualty Coverage</span>
-                        </div>
-                        <div class="flex items-center space-x-3 text-sm text-slate-300">
-                            <div class="w-1 h-1 bg-azure-400 rounded-full"></div>
-                            <span>Compliance Surety Bonds</span>
-                        </div>
-                        <div class="flex items-center space-x-3 text-sm text-slate-300">
-                            <div class="w-1 h-1 bg-azure-400 rounded-full"></div>
-                            <span>Risk Management Consulting</span>
-                        </div>
-                    </div>
-                </div>
+                <div class="glass-card rounded-sm p-10 group"><div class="flex items-start justify-between mb-8"><div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-star/50"><i data-lucide="shield" class="w-6 h-6 text-star"></i></div><span class="text-xs text-star tracking-widest uppercase border border-star/20 px-3 py-1 rounded-sm">Foundation</span></div><h3 class="font-serif text-3xl text-white mb-4 group-hover:text-star/80">Self-Funded Medical Plans</h3><p class="text-slate-400 leading-relaxed mb-8 font-light">Eliminate carrier profit loads and premium taxes. Gain complete visibility into claims data and retain investment income on reserves.</p><div class="space-y-3"><div class="flex items-center space-x-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-star"></i><span>Full claims transparency</span></div><div class="flex items-center space-x-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-star"></i><span>Custom plan design</span></div><div class="flex items-center space-x-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-star"></i><span>Advanced stop-loss</span></div></div></div>
+                <div class="glass-card rounded-sm p-10 group"><div class="flex items-start justify-between mb-8"><div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-star/50"><i data-lucide="pill" class="w-6 h-6 text-star"></i></div><span class="text-xs text-star tracking-widest uppercase border border-star/20 px-3 py-1 rounded-sm">Optimization</span></div><h3 class="font-serif text-3xl text-white mb-4 group-hover:text-star/80">340B Drug Pricing</h3><p class="text-slate-400 leading-relaxed mb-8 font-light">Access federally mandated drug pricing discounts through strategic partnerships. Reduce pharmacy spend by 25-50%.</p><div class="flex items-center space-x-8 pt-4 border-t border-white/5"><div><p class="text-3xl font-serif text-white">25-50%</p><p class="text-xs text-slate-500">Avg Savings</p></div><div><p class="text-3xl font-serif text-white">$2M+</p><p class="text-xs text-slate-500">Annual Impact</p></div></div></div>
+                <div class="glass-card rounded-sm p-10 group"><div class="flex items-start justify-between mb-8"><div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-star/50"><i data-lucide="heart-pulse" class="w-6 h-6 text-star"></i></div><span class="text-xs text-star tracking-widest uppercase border border-star/20 px-3 py-1 rounded-sm">Prevention</span></div><h3 class="font-serif text-3xl text-white mb-4 group-hover:text-star/80">Direct Primary Care</h3><p class="text-slate-400 leading-relaxed mb-8 font-light">Unlimited primary care for a flat fee. Reduce ER utilization and improve chronic condition management.</p><div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/5"><div><p class="text-2xl font-serif text-white">↓40%</p><p class="text-xs text-slate-500">ER Visits</p></div><div><p class="text-2xl font-serif text-white">↓30%</p><p class="text-xs text-slate-500">Specialist Ref</p></div><div><p class="text-2xl font-serif text-white">↑85%</p><p class="text-xs text-slate-500">Satisfaction</p></div></div></div>
+                <div class="glass-card rounded-sm p-10 group"><div class="flex items-start justify-between mb-8"><div class="w-14 h-14 border border-white/10 rounded-sm flex items-center justify-center group-hover:border-star/50"><i data-lucide="building-2" class="w-6 h-6 text-star"></i></div><span class="text-xs text-star tracking-widest uppercase border border-star/20 px-3 py-1 rounded-sm">Protection</span></div><h3 class="font-serif text-3xl text-white mb-4 group-hover:text-star/80">P&C and Surety Bonds</h3><p class="text-slate-400 leading-relaxed mb-8 font-light">Tailored commercial property, casualty coverage, and surety bonds for educational institutions.</p><div class="space-y-3"><div class="flex items-center space-x-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-star"></i><span>Property & Casualty</span></div><div class="flex items-center space-x-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-star"></i><span>Compliance Bonds</span></div><div class="flex items-center space-x-3 text-sm text-slate-300"><i data-lucide="check" class="w-4 h-4 text-star"></i><span>Risk Consulting</span></div></div></div>
             </div>
         </div>
     </section>
@@ -557,317 +402,104 @@
     <!-- About Section -->
     <section id="about" class="py-32 relative">
         <div class="absolute inset-0 bg-midnight"></div>
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-star/20 to-transparent"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-16 items-center">
-                <div class="lg:col-span-5">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-navy-900/30 rounded-sm blur-2xl"></div>
-                        <div class="relative glass-elite p-1 rounded-sm">
-                            <div class="aspect-[3/4] rounded-sm overflow-hidden bg-navy-950">
-                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-navy-900 to-midnight">
-                                    <div class="text-center p-8">
-                                        <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border border-white/20">
-                                            <img src="https://via.placeholder.com/200x200?text=Victor" alt="Victor" class="w-full h-full object-cover">
-                                        </div>
-                                        <p class="font-serif text-2xl text-white mb-2">Victor</p>
-                                        <p class="text-sm text-slate-400 tracking-widest uppercase">Managing Consultant</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Decorative -->
-                        <div class="absolute -bottom-6 -right-6 glass-elite p-6 rounded-sm max-w-xs">
-                            <p class="text-sm text-slate-400 mb-2">Experience</p>
-                            <p class="text-2xl font-serif text-white">15+ Years</p>
-                            <p class="text-xs text-slate-500 mt-1">Public Sector Benefits</p>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="lg:col-span-5"><div class="relative"><div class="absolute -inset-4 bg-navy-900/30 rounded-sm blur-2xl"></div><div class="relative glass-elite p-1 rounded-sm"><div class="aspect-[3/4] rounded-sm overflow-hidden bg-navy-950"><div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-navy-900 to-midnight"><div class="text-center p-8"><div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-2 border-star/30"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop" alt="Victor" class="w-full h-full object-cover"></div><p class="font-serif text-2xl text-white mb-2">Victor</p><p class="text-sm text-slate-400 tracking-widest uppercase">Managing Consultant</p><div class="mt-4"><i data-lucide="star" class="w-5 h-5 text-star"></i></div></div></div></div></div><div class="absolute -bottom-6 -right-6 glass-elite p-6 rounded-sm max-w-xs border-star/20"><p class="text-sm text-slate-400 mb-2">Experience</p><p class="text-2xl font-serif text-white">15+ Years</p><p class="text-xs text-slate-500 mt-1">Public Sector Benefits</p></div></div></div>
                 <div class="lg:col-span-7">
-                    <p class="text-azure-400 text-sm tracking-widest uppercase mb-4">About Us</p>
-                    <h2 class="heading-display text-4xl md:text-5xl text-white mb-8">
-                        A Legacy of <span class="italic text-slate-400">Stewardship</span>
-                    </h2>
-                    
+                    <p class="text-star text-sm tracking-widest uppercase mb-4">About Us</p>
+                    <h2 class="heading-display text-4xl md:text-5xl text-white mb-8">A Legacy of <span class="italic text-slate-400">Stewardship</span></h2>
                     <div class="space-y-6 text-slate-400 text-lg leading-relaxed font-light">
-                        <p>
-                            Since 1996, the <strong class="text-white font-normal">Lone Star Benefits Trust</strong> has served as a fiduciary partner to Texas school districts. Our reputation for stability and sophisticated strategy now extends to Oklahoma through our exclusive partnership with the <strong class="text-azure-400 font-normal">Oklahoma State School Boards Association</strong>.
-                        </p>
-                        <p>
-                            We operate on a simple principle: your healthcare dollars should educate children, not enrich shareholders. As fiduciaries to our public sector clients, we provide the transparency, control, and cost management that fully insured carriers cannot offer.
-                        </p>
+                        <p>Since 1996, <strong class="text-white font-normal">Lone Star Benefits Trust</strong> has served as a fiduciary partner to Texas school districts. Our reputation now extends to Oklahoma through our exclusive partnership with the <strong class="text-star font-normal">Oklahoma State School Boards Association</strong>.</p>
+                        <p class="italic border-l-2 border-star/30 pl-5">“Since 1996, we've worked with 200+ Texas Independent School Districts, helping leadership teams strengthen plan governance, improve financial predictability, and protect district budgets.”</p>
+                        <p>We operate on a simple principle: your healthcare dollars should educate children, not enrich shareholders.</p>
                     </div>
-
-                    <div class="mt-10 pt-10 border-t border-white/10">
-                        <div class="quote-mark leading-none mb-4">"</div>
-                        <p class="text-xl text-white font-light italic mb-4">
-                            I had no idea this level of savings and control was possible. We turn the complexity of self-funding into a clear, actionable path forward.
-                        </p>
-                        <p class="text-sm text-slate-500 tracking-widest uppercase">— Victor, Managing Consultant</p>
-                    </div>
+                    <div class="mt-10 pt-10 border-t border-white/10"><div class="quote-mark leading-none mb-4">“</div><p class="text-xl text-white font-light italic mb-4">I had no idea this level of savings and control was possible.</p><p class="text-sm text-slate-500 tracking-widest uppercase">— Victor, Managing Consultant</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section (Swiper) -->
+    <!-- Testimonials -->
     <section id="testimonials" class="py-32 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-midnight to-navy-950"></div>
-        
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <p class="text-azure-400 text-sm tracking-widest uppercase mb-4">Testimonials</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">
-                    Trusted by <span class="italic">District Leaders</span>
-                </h2>
-                <p class="text-slate-400 text-lg font-light">
-                    Hear from administrators who've transformed their benefits strategy with our guidance.
-                </p>
-            </div>
-
-            <div class="swiper testimonialSwiper">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <div class="glass-card rounded-sm p-8 h-full">
-                            <div class="flex items-center space-x-1 text-azure-300 mb-6">
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            </div>
-                            <p class="text-slate-300 text-lg mb-6 font-light">"Switching to a self-funded plan saved our district over $2 million in the first year. The transparency and support have been exceptional."</p>
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-navy-700 rounded-full flex items-center justify-center text-white font-serif text-xl">JD</div>
-                                <div class="ml-4">
-                                    <p class="text-white font-medium">Dr. Jennifer Davis</p>
-                                    <p class="text-xs text-slate-500 uppercase tracking-wider">Superintendent, TX</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <div class="glass-card rounded-sm p-8 h-full">
-                            <div class="flex items-center space-x-1 text-azure-300 mb-6">
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            </div>
-                            <p class="text-slate-300 text-lg mb-6 font-light">"The 340B program alone cut our pharmacy spend by 35%. Victor and his team made the transition seamless."</p>
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-navy-700 rounded-full flex items-center justify-center text-white font-serif text-xl">RM</div>
-                                <div class="ml-4">
-                                    <p class="text-white font-medium">Robert Martinez</p>
-                                    <p class="text-xs text-slate-500 uppercase tracking-wider">CFO, OK</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <div class="glass-card rounded-sm p-8 h-full">
-                            <div class="flex items-center space-x-1 text-azure-300 mb-6">
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            </div>
-                            <p class="text-slate-300 text-lg mb-6 font-light">"We were hesitant to leave our fully insured plan, but the stop-loss protection and expert guidance gave us confidence."</p>
-                            <div class="flex items-center">
-                                <div class="w-12 h-12 bg-navy-700 rounded-full flex items-center justify-center text-white font-serif text-xl">ST</div>
-                                <div class="ml-4">
-                                    <p class="text-white font-medium">Susan Thompson</p>
-                                    <p class="text-xs text-slate-500 uppercase tracking-wider">HR Director, TX</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pagination -->
-                <div class="swiper-pagination mt-10"></div>
-            </div>
+            <div class="text-center max-w-3xl mx-auto mb-20"><p class="text-star text-sm tracking-widest uppercase mb-4">Testimonials</p><h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Trusted by <span class="italic">District Leaders</span></h2><p class="text-slate-400 text-lg font-light">Hear from administrators who've transformed their benefits strategy.</p></div>
+            <div class="swiper testimonialSwiper"><div class="swiper-wrapper">
+                <div class="swiper-slide"><div class="glass-card rounded-sm p-8 h-full"><div class="flex items-center space-x-1 text-star mb-6"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div><p class="text-slate-300 text-lg mb-6 font-light">"Switching to a self-funded plan saved our district over $2 million in the first year."</p><div class="flex items-center"><div class="w-12 h-12 bg-navy-700 rounded-full flex items-center justify-center text-white font-serif text-xl border border-star/30">JD</div><div class="ml-4"><p class="text-white font-medium">Dr. Jennifer Davis</p><p class="text-xs text-slate-500 uppercase">Superintendent, TX</p></div></div></div></div>
+                <div class="swiper-slide"><div class="glass-card rounded-sm p-8 h-full"><div class="flex items-center space-x-1 text-star mb-6"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div><p class="text-slate-300 text-lg mb-6 font-light">"The 340B program alone cut our pharmacy spend by 35%."</p><div class="flex items-center"><div class="w-12 h-12 bg-navy-700 rounded-full flex items-center justify-center text-white font-serif text-xl border border-star/30">RM</div><div class="ml-4"><p class="text-white font-medium">Robert Martinez</p><p class="text-xs text-slate-500 uppercase">CFO, OK</p></div></div></div></div>
+                <div class="swiper-slide"><div class="glass-card rounded-sm p-8 h-full"><div class="flex items-center space-x-1 text-star mb-6"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div><p class="text-slate-300 text-lg mb-6 font-light">"Stop-loss protection and expert guidance gave us confidence."</p><div class="flex items-center"><div class="w-12 h-12 bg-navy-700 rounded-full flex items-center justify-center text-white font-serif text-xl border border-star/30">ST</div><div class="ml-4"><p class="text-white font-medium">Susan Thompson</p><p class="text-xs text-slate-500 uppercase">HR Director, TX</p></div></div></div></div>
+            </div><div class="swiper-pagination mt-10"></div></div>
         </div>
     </section>
 
-    <!-- Consultation Section (Direct Cal.com Link) -->
+    <!-- Consultation -->
     <section id="consultation" class="py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-navy-950 to-midnight"></div>
-        
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="text-azure-400 text-sm tracking-widest uppercase mb-4">Private Consultation</p>
-            <h2 class="heading-display text-4xl md:text-5xl text-white mb-6 max-w-3xl mx-auto">
-                Let's Examine Your Data
-            </h2>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12 font-light">
-                No obligation. No pressure. Just clarity. To accurately model potential savings, we request 36 months of claims history. Select a time that works best for you.
-            </p>
-
-            <div class="flex justify-center">
-                <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="btn-primary px-12 py-5 text-white text-lg tracking-wide rounded-sm inline-flex items-center justify-center space-x-3 group">
-                    <span>Schedule Your Private Consultation</span>
-                    <i data-lucide="calendar" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                </a>
-            </div>
-
+            <p class="text-star text-sm tracking-widest uppercase mb-4">Private Consultation</p>
+            <h2 class="heading-display text-4xl md:text-5xl text-white mb-6 max-w-3xl mx-auto">Let's Examine Your Data</h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12 font-light">No obligation. No pressure. Just clarity. 36 months of claims history requested for accurate modeling.</p>
+            <div class="flex justify-center"><a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="btn-primary px-12 py-5 text-white text-lg tracking-wide rounded-sm inline-flex items-center justify-center space-x-3 group"><span>Schedule Your Private Consultation</span><i data-lucide="calendar" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i></a></div>
             <div class="mt-16 grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-                <div class="text-center trust-item">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-sm border border-white/10 flex items-center justify-center">
-                        <i data-lucide="file-text" class="w-5 h-5 text-azure-400"></i>
-                    </div>
-                    <h4 class="text-white text-sm mb-2">Data Requirements</h4>
-                    <p class="text-xs text-slate-500">36 months claims/loss run data</p>
-                </div>
-                <div class="text-center trust-item">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-sm border border-white/10 flex items-center justify-center">
-                        <i data-lucide="clock" class="w-5 h-5 text-azure-400"></i>
-                    </div>
-                    <h4 class="text-white text-sm mb-2">Time Sensitive</h4>
-                    <p class="text-xs text-slate-500">Analysis must begin within 60 days</p>
-                </div>
-                <div class="text-center trust-item">
-                    <div class="w-12 h-12 mx-auto mb-4 rounded-sm border border-white/10 flex items-center justify-center">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-azure-400"></i>
-                    </div>
-                    <h4 class="text-white text-sm mb-2">No Obligation</h4>
-                    <p class="text-xs text-slate-500">Analysis does not commit to transition</p>
-                </div>
+                <div class="text-center trust-item"><div class="w-12 h-12 mx-auto mb-4 rounded-sm border border-star/20 flex items-center justify-center"><i data-lucide="file-text" class="w-5 h-5 text-star"></i></div><h4 class="text-white text-sm mb-2">Data Requirements</h4><p class="text-xs text-slate-500">36 months claims data</p></div>
+                <div class="text-center trust-item"><div class="w-12 h-12 mx-auto mb-4 rounded-sm border border-star/20 flex items-center justify-center"><i data-lucide="clock" class="w-5 h-5 text-star"></i></div><h4 class="text-white text-sm mb-2">Time Sensitive</h4><p class="text-xs text-slate-500">Analysis within 60 days</p></div>
+                <div class="text-center trust-item"><div class="w-12 h-12 mx-auto mb-4 rounded-sm border border-star/20 flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5 text-star"></i></div><h4 class="text-white text-sm mb-2">No Obligation</h4><p class="text-xs text-slate-500">Analysis does not commit</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with updated phone -->
     <footer id="contact" class="py-20 relative">
         <div class="absolute inset-0 bg-midnight"></div>
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-star/20 to-transparent"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-12 gap-12 mb-16">
-                <div class="md:col-span-6">
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="md:col-span-1">
                     <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-10 h-10 border border-white/20 rounded-sm flex items-center justify-center">
-                            <span class="font-serif text-xl text-white font-semibold">L</span>
-                        </div>
-                        <div>
-                            <p class="text-white font-serif text-lg">Lone Star Benefits Trust</p>
-                            <p class="text-xs text-slate-500 tracking-widest uppercase">Executive Division</p>
-                        </div>
+                        <div class="w-10 h-10 border border-star/30 rounded-sm flex items-center justify-center"><i data-lucide="star" class="w-5 h-5 text-star"></i></div>
+                        <div><p class="text-white font-serif text-lg tracking-wide">LONE STAR BENEFITS TRUST</p><p class="text-xs text-star/80 tracking-widest uppercase">PROTECTION · STABILITY · STEWARDSHIP</p></div>
                     </div>
-                    <p class="text-slate-400 max-w-md leading-relaxed font-light mb-6">
-                        With gratitude for your service to Texas and Oklahoma students. We are committed to helping district leadership navigate complex benefits decisions with clarity and confidence.
-                    </p>
+                    <p class="text-slate-400 max-w-md leading-relaxed font-light mb-6">With gratitude for your service to Texas and Oklahoma students. We are committed to helping district leadership navigate complex benefits decisions with clarity and confidence.</p>
+                    <p class="text-xs text-slate-500 mb-4">We are private consultants licensed and regulated in our respective states.</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 border border-white/10 rounded-sm flex items-center justify-center text-slate-400 hover:text-white hover:border-white/30 transition-all">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 border border-white/10 rounded-sm flex items-center justify-center text-slate-400 hover:text-white hover:border-white/30 transition-all">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                        </a>
+                        <a href="#" class="w-10 h-10 border border-white/10 rounded-sm flex items-center justify-center text-slate-400 hover:text-star hover:border-star/40"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                        <a href="mailto:victor@lonestartrustbenefits.org" class="w-10 h-10 border border-white/10 rounded-sm flex items-center justify-center text-slate-400 hover:text-star hover:border-star/40"><i data-lucide="mail" class="w-4 h-4"></i></a>
                     </div>
                 </div>
-
-                <div class="md:col-span-3">
-                    <h4 class="text-white text-sm tracking-widest uppercase mb-6">Contact</h4>
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-start space-x-3 text-slate-400">
-                            <i data-lucide="user" class="w-4 h-4 mt-0.5 text-azure-400"></i>
-                            <span>Victor, Managing Consultant</span>
-                        </div>
-                        <div class="flex items-start space-x-3 text-slate-400">
-                            <i data-lucide="phone" class="w-4 h-4 mt-0.5 text-azure-400"></i>
-                            <span>(572) 268-9315</span>
-                        </div>
-                        <div class="flex items-start space-x-3 text-slate-400">
-                            <i data-lucide="phone" class="w-4 h-4 mt-0.5 text-azure-400"></i>
-                            <span>(572) 235-3760</span>
-                        </div>
-                        <div class="flex items-start space-x-3 text-slate-400">
-                            <i data-lucide="building" class="w-4 h-4 mt-0.5 text-azure-400"></i>
-                            <span>OSSBA Employee Benefits</span>
-                        </div>
+                <div class="md:col-span-1 md:text-right">
+                    <h4 class="text-white text-sm tracking-widest uppercase mb-6 md:ml-auto">Contact</h4>
+                    <div class="space-y-4 text-sm md:ml-auto">
+                        <div class="flex items-start space-x-3 text-slate-400 md:justify-end"><span>Victor, Managing Consultant</span><i data-lucide="user" class="w-4 h-4 mt-0.5 text-star shrink-0"></i></div>
+                        <div class="flex items-start space-x-3 text-slate-400 md:justify-end"><span>(214) 297-6215</span><i data-lucide="phone" class="w-4 h-4 mt-0.5 text-star shrink-0"></i></div>
+                        <div class="flex items-start space-x-3 text-slate-400 md:justify-end"><span>victor@lonestartrustbenefits.org</span><i data-lucide="mail" class="w-4 h-4 mt-0.5 text-star shrink-0"></i></div>
+                        <div class="flex items-start space-x-3 text-slate-400 md:justify-end"><span>OSSBA Employee Benefits</span><i data-lucide="building" class="w-4 h-4 mt-0.5 text-star shrink-0"></i></div>
                     </div>
-                </div>
-
-                <div class="md:col-span-3">
-                    <h4 class="text-white text-sm tracking-widest uppercase mb-6">Legal</h4>
-                    <ul class="space-y-3 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Accessibility</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Fiduciary Duty</a></li>
-                    </ul>
                 </div>
             </div>
-
             <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-xs text-slate-600 tracking-wider">&copy; 2026 Lone Star Benefits Trust. All rights reserved.</p>
-                <!-- Removed Tedford Insurance Division line as requested -->
+                <p class="text-xs text-slate-600 tracking-wider">&copy; 2026 Lone Star Benefits Trust™. All rights reserved.</p>
+                <div class="flex items-center space-x-2 mt-3 md:mt-0"><i data-lucide="star" class="w-3 h-3 text-star/50"></i><span class="text-xs text-slate-600">PROTECTION · STABILITY · STEWARDSHIP</span></div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        // GSAP Registration
         gsap.registerPlugin(ScrollTrigger);
-
-        // Progress Line
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progressLine').style.width = scrolled + '%';
-            
-            // Navbar styling
-            const navbar = document.getElementById('navbar');
-            if (winScroll > 50) {
-                navbar.classList.add('glass-elite');
-            } else {
-                navbar.classList.remove('glass-elite');
-            }
+            document.getElementById('progressLine').style.width = (winScroll / height) * 100 + '%';
+            document.getElementById('navbar').classList.toggle('glass-elite', winScroll > 50);
         });
-
-        // Mobile Menu
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Scroll Animations for cards
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
         gsap.utils.toArray('.glass-card').forEach((card, i) => {
-            gsap.from(card, {
-                scrollTrigger: {
-                    trigger: card,
-                    start: 'top 85%',
-                    toggleActions: 'play none none reverse'
-                },
-                opacity: 0,
-                y: 30,
-                duration: 0.8,
-                delay: i * 0.1,
-                ease: 'power3.out'
-            });
+            gsap.from(card, { scrollTrigger: { trigger: card, start: 'top 85%' }, opacity: 0, y: 30, duration: 0.8, delay: i*0.1, ease: 'power3.out' });
         });
-
-        // Count-up animation
         const countups = document.querySelectorAll('.countup');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -879,52 +511,25 @@
                     const timer = setInterval(() => {
                         current += increment;
                         if (current >= target) {
-                            el.textContent = target + (target === 50 ? 'M+' : '');
+                            el.textContent = target + (target === 50 ? 'M+' : (target === 200 ? '+' : ''));
                             clearInterval(timer);
-                        } else {
-                            el.textContent = Math.floor(current);
-                        }
+                        } else el.textContent = Math.floor(current);
                     }, 20);
                     observer.unobserve(el);
                 }
             });
         }, { threshold: 0.5 });
         countups.forEach(el => observer.observe(el));
-
-        // Swiper Testimonials
         new Swiper('.testimonialSwiper', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
+            slidesPerView: 1, spaceBetween: 20, loop: true, autoplay: { delay: 5000 },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
         });
-
-        // Smooth scroll for anchor links (excluding external Cal.com links)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
