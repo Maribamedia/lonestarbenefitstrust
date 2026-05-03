@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lone Star Benefits Trust | KPPFree™ - District Healthcare Savings</title>
-    <meta name="description" content="KPPFree™ bundled pricing for Texas and Oklahoma school districts. Cut surgical and procedure costs 50–80% below PPO with zero out-of-pocket for employees.">
+    <title>Lone Star Benefits Trust | Bundle Pricing - District Healthcare Savings</title>
+    <meta name="description" content="Bundle Pricing for Texas and Oklahoma school districts. Cut surgical and procedure costs 50–80% below PPO with zero out-of-pocket for employees.">
     
     <!-- Favicon (Star motif, inline SVG) -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 61,40 98,40 68,60 79,95 50,75 21,95 32,60 2,40 39,40' fill='%23D4AF37'/%3E%3C/svg%3E">
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
     <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,15 +20,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
+    </script>
     
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
     
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+    </script>
     
     <script>
         tailwind.config = {
@@ -52,8 +57,10 @@
                         },
                         star: '#D4AF37',
                         lone: '#B22234',
-                        kppteal: '#0e7f6e',
-                        kpptealLight: '#12a08c',
+                        bundle: {
+                            DEFAULT: '#2D6A4F',
+                            light: '#40916C',
+                        },
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -118,13 +125,13 @@
             background: rgba(255,255,255,0.05);
             border-color: rgba(212, 175, 55, 0.4);
         }
-        .btn-kppteal {
-            background: var(--kppteal);
-            border: 1px solid var(--kpptealLight);
+        .btn-bundle {
+            background: var(--bundle);
+            border: 1px solid var(--bundle-light);
             transition: all 0.4s;
         }
-        .btn-kppteal:hover {
-            background: var(--kpptealLight);
+        .btn-bundle:hover {
+            background: var(--bundle-light);
         }
         
         /* Typography */
@@ -142,7 +149,7 @@
         
         /* Grid Pattern */
         .grid-subtle {
-            background-image: 
+            background-image:
                 radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.02) 0%, transparent 30%),
                 linear-gradient(rgba(124, 203, 253, 0.02) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(124, 203, 253, 0.02) 1px, transparent 1px);
@@ -202,11 +209,11 @@
             color: white;
         }
         .calc-input:focus {
-            border-color: var(--kpptealLight);
+            border-color: var(--bundle-light);
         }
         .savings-badge {
-            background: rgba(14,127,110,0.2);
-            border: 1px solid rgba(14,127,110,0.3);
+            background: rgba(45,106,79,0.2);
+            border: 1px solid rgba(45,106,79,0.3);
         }
     </style>
 </head>
@@ -237,7 +244,7 @@
 
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#challenge" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Why Self-Fund</a>
-                    <a href="#kppfree-diff" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">KPPFree™</a>
+                    <a href="#bundle-diff" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Bundle Pricing</a>
                     <a href="#how" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">How It Works</a>
                     <a href="#savings-calc" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Calculator</a>
                     <a href="#pricing-table" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Pricing</a>
@@ -257,7 +264,7 @@
         <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full glass-elite border-t border-white/5">
             <div class="px-6 py-8 space-y-4">
                 <a href="#challenge" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Why Self-Fund</a>
-                <a href="#kppfree-diff" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">KPPFree™</a>
+                <a href="#bundle-diff" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Bundle Pricing</a>
                 <a href="#how" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">How It Works</a>
                 <a href="#savings-calc" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Calculator</a>
                 <a href="#pricing-table" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Pricing</a>
@@ -267,7 +274,7 @@
         </div>
     </nav>
 
-    <!-- HERO – KPPFree™ Focus -->
+    <!-- HERO – Bundle Pricing Focus -->
     <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
         <div class="absolute inset-0 gradient-luxury"></div>
         <div class="absolute inset-0 grid-subtle opacity-60"></div>
@@ -284,15 +291,15 @@
                     <h1 class="heading-display text-5xl md:text-6xl lg:text-7xl text-white">
                         Stop Overpaying<br>
                         on <span class="text-gradient">Healthcare.</span><br>
-                        <span class="italic">KPPFree™</span> Cuts Costs 50–80%.
+                        <span class="italic">Bundle Pricing</span> Cuts Costs 50–80%.
                     </h1>
                     
                     <p class="text-lg text-slate-400 max-w-xl leading-relaxed body-elegant font-light">
-                        The KPPFree™ program gives Texas and Oklahoma school districts direct access to high‑quality providers at bundled rates far below PPO pricing. Employees pay $0 out‑of‑pocket when they choose a KPPFree™ provider.
+                        The Bundle Pricing program gives Texas and Oklahoma school districts direct access to high‑quality providers at bundled rates far below PPO pricing. Employees pay $0 out‑of‑pocket when they choose a Bundle Pricing provider.
                     </p>
 
                     <div class="border-l-2 border-star/40 pl-5 py-1 text-sm text-slate-400 italic max-w-xl">
-                        “KPPFree™ is cost containment achieved the right way — through patient and provider choice, not by shifting costs onto employees.”
+                        “Bundle Pricing is cost containment achieved the right way — through patient and provider choice, not by shifting costs onto employees.”
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
@@ -329,15 +336,15 @@
                         <div class="relative glass-elite p-1 rounded-sm">
                             <div class="p-6 space-y-5">
                                 <div class="flex justify-between items-baseline">
-                                    <span class="text-xs text-slate-400 uppercase tracking-widest">KPPFree™ vs PPO</span>
-                                    <span class="text-[10px] text-kpptealLight uppercase">Bundled Rates</span>
+                                    <span class="text-xs text-slate-400 uppercase tracking-widest">Bundle Pricing vs PPO</span>
+                                    <span class="text-[10px] text-bundle-light uppercase">Bundled Rates</span>
                                 </div>
                                 <div class="space-y-3">
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Coronary Bypass</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$250,000</span><span class="text-sm text-kpptealLight font-semibold">$54,500</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Hip Replacement</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$37,701</span><span class="text-sm text-kpptealLight font-semibold">$22,379</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Knee Replacement</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$30,886</span><span class="text-sm text-kpptealLight font-semibold">$20,372</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Colonoscopy</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$3,633</span><span class="text-sm text-kpptealLight font-semibold">$1,808</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">MRI</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$1,982</span><span class="text-sm text-kpptealLight font-semibold">$662</span></div></div>
+                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Coronary Bypass</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$250,000</span><span class="text-sm text-bundle-light font-semibold">$54,500</span></div></div>
+                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Hip Replacement</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$37,701</span><span class="text-sm text-bundle-light font-semibold">$22,379</span></div></div>
+                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Knee Replacement</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$30,886</span><span class="text-sm text-bundle-light font-semibold">$20,372</span></div></div>
+                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Colonoscopy</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$3,633</span><span class="text-sm text-bundle-light font-semibold">$1,808</span></div></div>
+                                    <div class="flex justify-between"><span class="text-sm text-slate-400">MRI</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$1,982</span><span class="text-sm text-bundle-light font-semibold">$662</span></div></div>
                                 </div>
                                 <div class="savings-badge rounded-lg p-4 text-center mt-6">
                                     <p class="text-3xl font-serif text-star">$295M+</p>
@@ -367,7 +374,7 @@
                     The Fully Insured <span class="italic text-slate-400">Paradox</span>
                 </h2>
                 <p class="text-slate-400 text-lg leading-relaxed font-light">
-                    While your district faces budget constraints, major carriers report record profits. The traditional model serves their shareholders—not your students or staff. That’s why self‑funding with KPPFree™ puts you back in control.
+                    While your district faces budget constraints, major carriers report record profits. The traditional model serves their shareholders—not your students or staff. That’s why self‑funding with Bundle Pricing puts you back in control.
                 </p>
             </div>
 
@@ -391,36 +398,36 @@
 
             <div class="mt-16 text-center">
                 <p class="text-xl text-slate-300 font-light italic">
-                    "The traditional fully insured model reliably generates substantial profits—for carriers, not employers. KPPFree™ flips that model."
+                    "The traditional fully insured model reliably generates substantial profits—for carriers, not employers. Bundle Pricing flips that model."
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- The KPPFree™ Difference – Everyone Wins -->
-    <section id="kppfree-diff" class="py-32 relative overflow-hidden">
+    <!-- The Bundle Pricing Difference – Everyone Wins -->
+    <section id="bundle-diff" class="py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-midnight via-navy-950 to-midnight"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <p class="text-star text-sm tracking-widest uppercase mb-4">The KPPFree™ Difference</p>
+                <p class="text-star text-sm tracking-widest uppercase mb-4">The Bundle Pricing Difference</p>
                 <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Everyone Wins — <span class="italic">That's the Mechanism</span></h2>
                 <p class="text-slate-400 text-lg font-light">No plan redesign. No disruption. Just 50–80% savings below PPO prices.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="glass-card rounded-sm p-10 group">
-                    <div class="w-12 h-12 rounded-full bg-kppteal/20 flex items-center justify-center mb-6 group-hover:bg-kppteal/30">
-                        <i data-lucide="user" class="w-6 h-6 text-kpptealLight"></i>
+                    <div class="w-12 h-12 rounded-full bg-bundle/20 flex items-center justify-center mb-6 group-hover:bg-bundle/30">
+                        <i data-lucide="user" class="w-6 h-6 text-bundle-light"></i>
                     </div>
                     <h3 class="font-serif text-2xl text-white mb-4">Employees Win</h3>
-                    <p class="text-slate-400 leading-relaxed font-light">When an employee chooses a KPPFree™ provider, they pay $0. No deductible, no copay. Travel and lodging covered when care isn't local. No billing surprises.</p>
-                    <span class="inline-block mt-6 bg-kppteal/10 text-kpptealLight text-xs font-semibold px-3 py-1 rounded-full">$0 Out-of-Pocket</span>
+                    <p class="text-slate-400 leading-relaxed font-light">When an employee chooses a Bundle Pricing provider, they pay $0. No deductible, no copay. Travel and lodging covered when care isn't local. No billing surprises.</p>
+                    <span class="inline-block mt-6 bg-bundle/10 text-bundle-light text-xs font-semibold px-3 py-1 rounded-full">$0 Out-of-Pocket</span>
                 </div>
                 <div class="glass-card rounded-sm p-10 group">
                     <div class="w-12 h-12 rounded-full bg-star/10 flex items-center justify-center mb-6 group-hover:bg-star/20">
                         <i data-lucide="building-2" class="w-6 h-6 text-star"></i>
                     </div>
                     <h3 class="font-serif text-2xl text-white mb-4">Providers Win</h3>
-                    <p class="text-slate-400 leading-relaxed font-light">KPPFree™ providers get paid via simple invoice in 10–14 days. No collections, no 90-day wait. They offer their best pricing because payment is guaranteed and immediate.</p>
+                    <p class="text-slate-400 leading-relaxed font-light">Bundle Pricing providers get paid via simple invoice in 10–14 days. No collections, no 90-day wait. They offer their best pricing because payment is guaranteed and immediate.</p>
                     <span class="inline-block mt-6 bg-star/10 text-star text-xs font-semibold px-3 py-1 rounded-full">Paid in 10–14 Days</span>
                 </div>
                 <div class="glass-card rounded-sm p-10 group">
@@ -441,7 +448,7 @@
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <p class="text-star text-sm tracking-widest uppercase mb-4">The Process</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">How KPPFree™ Works</h2>
+                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">How Bundle Pricing Works</h2>
                 <p class="text-slate-400 text-lg font-light">Four straightforward steps from procedure need to provider payment.</p>
             </div>
             <div class="grid md:grid-cols-4 gap-8">
@@ -456,8 +463,8 @@
                     <div class="w-12 h-12 rounded-full bg-navy-700 border border-star/20 flex items-center justify-center mx-auto mb-6">
                         <span class="font-serif text-2xl text-star font-bold">2</span>
                     </div>
-                    <h4 class="text-white font-medium mb-3">KPPFree™ Provider Match</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">The member is connected to a high‑quality, pre‑contracted KPPFree™ provider.</p>
+                    <h4 class="text-white font-medium mb-3">Bundle Pricing Provider Match</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">The member is connected to a high‑quality, pre‑contracted Bundle Pricing provider.</p>
                 </div>
                 <div class="text-center">
                     <div class="w-12 h-12 rounded-full bg-navy-700 border border-star/20 flex items-center justify-center mx-auto mb-6">
@@ -484,7 +491,7 @@
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <p class="text-star text-sm tracking-widest uppercase mb-4">Savings Estimator</p>
                 <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">How Much Could Your District Save?</h2>
-                <p class="text-slate-400">Adjust the sliders to see potential annual savings with KPPFree™.</p>
+                <p class="text-slate-400">Adjust the sliders to see potential annual savings with Bundle Pricing.</p>
             </div>
             <div class="glass-card rounded-sm p-8 md:p-12">
                 <div class="grid md:grid-cols-2 gap-8 mb-10">
@@ -520,8 +527,8 @@
                         <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">PPO Cost</div>
                     </div>
                     <div>
-                        <div class="text-3xl font-serif text-kpptealLight" id="kpp-cost">$0</div>
-                        <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">KPPFree™ Cost</div>
+                        <div class="text-3xl font-serif text-bundle-light" id="bundle-cost">$0</div>
+                        <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">Bundle Pricing Cost</div>
                     </div>
                     <div>
                         <div class="text-3xl font-serif text-star" id="savings">$0</div>
@@ -538,7 +545,7 @@
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <p class="text-star text-sm tracking-widest uppercase mb-4">Real‑World Savings</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">KPPFree™ vs. PPO Pricing</h2>
+                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Bundle Pricing vs. PPO Pricing</h2>
                 <p class="text-slate-400 text-lg font-light">Actual procedure costs — no asterisks, no hidden fees.</p>
             </div>
             <div class="overflow-x-auto">
@@ -547,7 +554,7 @@
                         <tr class="border-b border-white/10">
                             <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">Procedure</th>
                             <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">PPO Network Price</th>
-                            <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">KPPFree™ Price</th>
+                            <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">Bundle Price</th>
                             <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">Avg Savings</th>
                             <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">% Below PPO</th>
                         </tr>
@@ -556,43 +563,43 @@
                         <tr class="hover:bg-white/5 transition">
                             <td class="py-5 px-6 text-white font-medium">Coronary Artery Bypass</td>
                             <td class="py-5 px-6 text-red-500 line-through">$250,000</td>
-                            <td class="py-5 px-6 text-kpptealLight font-semibold">$54,500</td>
-                            <td class="py-5 px-6"><span class="bg-kppteal/20 text-kpptealLight text-xs font-bold px-3 py-1 rounded-full">$195,500</span></td>
+                            <td class="py-5 px-6 text-bundle-light font-semibold">$54,500</td>
+                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$195,500</span></td>
                             <td class="py-5 px-6 text-white">78.2%</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition">
                             <td class="py-5 px-6 text-white font-medium">Hip Replacement</td>
                             <td class="py-5 px-6 text-red-500 line-through">$37,701</td>
-                            <td class="py-5 px-6 text-kpptealLight font-semibold">$22,379</td>
-                            <td class="py-5 px-6"><span class="bg-kppteal/20 text-kpptealLight text-xs font-bold px-3 py-1 rounded-full">$15,222</span></td>
+                            <td class="py-5 px-6 text-bundle-light font-semibold">$22,379</td>
+                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$15,222</span></td>
                             <td class="py-5 px-6 text-white">40.5%</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition">
                             <td class="py-5 px-6 text-white font-medium">Knee Replacement</td>
                             <td class="py-5 px-6 text-red-500 line-through">$30,886</td>
-                            <td class="py-5 px-6 text-kpptealLight font-semibold">$20,372</td>
-                            <td class="py-5 px-6"><span class="bg-kppteal/20 text-kpptealLight text-xs font-bold px-3 py-1 rounded-full">$10,514</span></td>
+                            <td class="py-5 px-6 text-bundle-light font-semibold">$20,372</td>
+                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$10,514</span></td>
                             <td class="py-5 px-6 text-white">34.9%</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition">
                             <td class="py-5 px-6 text-white font-medium">Colonoscopy</td>
                             <td class="py-5 px-6 text-red-500 line-through">$3,633</td>
-                            <td class="py-5 px-6 text-kpptealLight font-semibold">$1,808</td>
-                            <td class="py-5 px-6"><span class="bg-kppteal/20 text-kpptealLight text-xs font-bold px-3 py-1 rounded-full">$1,825</span></td>
+                            <td class="py-5 px-6 text-bundle-light font-semibold">$1,808</td>
+                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$1,825</span></td>
                             <td class="py-5 px-6 text-white">50.3%</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition">
                             <td class="py-5 px-6 text-white font-medium">MRI</td>
                             <td class="py-5 px-6 text-red-500 line-through">$1,982</td>
-                            <td class="py-5 px-6 text-kpptealLight font-semibold">$662</td>
-                            <td class="py-5 px-6"><span class="bg-kppteal/20 text-kpptealLight text-xs font-bold px-3 py-1 rounded-full">$1,320</span></td>
+                            <td class="py-5 px-6 text-bundle-light font-semibold">$662</td>
+                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$1,320</span></td>
                             <td class="py-5 px-6 text-white">66.7%</td>
                         </tr>
                         <tr class="hover:bg-white/5 transition">
                             <td class="py-5 px-6 text-white font-medium">CT Scan</td>
                             <td class="py-5 px-6 text-red-500 line-through">$1,618</td>
-                            <td class="py-5 px-6 text-kpptealLight font-semibold">$357</td>
-                            <td class="py-5 px-6"><span class="bg-kppteal/20 text-kpptealLight text-xs font-bold px-3 py-1 rounded-full">$1,261</span></td>
+                            <td class="py-5 px-6 text-bundle-light font-semibold">$357</td>
+                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$1,261</span></td>
                             <td class="py-5 px-6 text-white">81.4%</td>
                         </tr>
                     </tbody>
@@ -602,10 +609,10 @@
     </section>
 
     <!-- CTA Strip -->
-    <section class="py-24 relative bg-kppteal/10">
+    <section class="py-24 relative bg-bundle/10">
         <div class="max-w-4xl mx-auto text-center px-6">
             <h2 class="heading-display text-3xl md:text-5xl text-white mb-6">Your District’s Renewal Is Approaching.<br>This Conversation Can’t Wait.</h2>
-            <p class="text-slate-300 text-lg mb-10 font-light">If your plan is within 90 days of renewal, now is the time to see what KPPFree™ can do for your budget.</p>
+            <p class="text-slate-300 text-lg mb-10 font-light">If your plan is within 90 days of renewal, now is the time to see what Bundle Pricing can do for your budget.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-5">
                 <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="btn-primary px-10 py-4 text-white rounded-sm">Schedule a 15‑Minute Call</a>
                 <a href="#savings-calc" class="btn-secondary px-10 py-4 text-white rounded-sm">Run Your Savings Estimate</a>
@@ -620,7 +627,7 @@
             <div class="text-center max-w-2xl mx-auto mb-20">
                 <p class="text-star text-sm tracking-widest uppercase mb-4">Get Started</p>
                 <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Two Ways to Reach Us</h2>
-                <p class="text-slate-400 text-lg font-light">Lone Star Benefits Trust and our exclusive KPPFree™ partners are ready to help.</p>
+                <p class="text-slate-400 text-lg font-light">Lone Star Benefits Trust is ready to help you launch Bundle Pricing for your district.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Lone Star Contact -->
@@ -636,27 +643,16 @@
                         <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="building" class="w-4 h-4 mt-0.5 text-star shrink-0"></i><span>OSSBA Employee Benefits</span></div>
                     </div>
                 </div>
-                <!-- KPPFree Partners Contact -->
+                <!-- Bundle Pricing Program Contact -->
                 <div class="glass-card rounded-sm p-8 md:p-10">
                     <div class="flex items-center space-x-3 mb-8">
-                        <div class="w-10 h-10 border border-kpptealLight/40 rounded-sm flex items-center justify-center"><span class="text-kpptealLight text-lg font-bold">™</span></div>
-                        <h3 class="font-serif text-xl text-white">KPPFree™ Program Inquiries</h3>
+                        <div class="w-10 h-10 border border-bundle-light/40 rounded-sm flex items-center justify-center"><span class="text-bundle-light text-lg font-bold">BP</span></div>
+                        <h3 class="font-serif text-xl text-white">Bundle Pricing Program</h3>
                     </div>
-                    <div class="space-y-6">
-                        <div>
-                            <div class="text-white font-medium mb-1">John R. Coffman</div>
-                            <div class="text-xs text-slate-400">Employee Benefits Consultant, Tedford Insurance</div>
-                            <div class="flex items-center space-x-2 mt-2 text-sm"><i data-lucide="mail" class="w-4 h-4 text-kpptealLight"></i><a href="mailto:john.coffman@tedfordinsurance.com" class="text-kpptealLight hover:underline">john.coffman@tedfordinsurance.com</a></div>
-                            <div class="flex items-center space-x-2 text-sm"><i data-lucide="phone" class="w-4 h-4 text-kpptealLight"></i><a href="tel:5722353760" class="text-kpptealLight hover:underline">572-235-3760</a></div>
-                        </div>
-                        <hr class="border-white/10">
-                        <div>
-                            <div class="text-white font-medium mb-1">Merrick Matthews</div>
-                            <div class="text-xs text-slate-400">The Kempton Group</div>
-                            <div class="flex items-center space-x-2 mt-2 text-sm"><i data-lucide="mail" class="w-4 h-4 text-kpptealLight"></i><a href="mailto:mmatthews@kemptongroup.com" class="text-kpptealLight hover:underline">mmatthews@kemptongroup.com</a></div>
-                            <div class="flex items-center space-x-2 text-sm"><i data-lucide="phone" class="w-4 h-4 text-kpptealLight"></i><a href="tel:4699994233" class="text-kpptealLight hover:underline">469-999-4233</a></div>
-                        </div>
-                        <div class="text-xs text-slate-500 pt-4">Kempton Group Administrators, Inc. · (800) 521-1711 · kemptongroup.com</div>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="phone" class="w-4 h-4 mt-0.5 text-bundle-light shrink-0"></i><span>(214) 297-6215</span></div>
+                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="mail" class="w-4 h-4 mt-0.5 text-bundle-light shrink-0"></i><span>info@lonestartrustbenefits.org</span></div>
+                        <div class="text-xs text-slate-500 pt-4">Contact us directly to explore bundled rates for your district.</div>
                     </div>
                 </div>
             </div>
@@ -732,12 +728,12 @@
         
         // Savings calculator
         const procs = {
-            bypass:      { ppo: 250000, kpp: 54500 },
-            hip:         { ppo: 37701,  kpp: 22379 },
-            knee:        { ppo: 30886,  kpp: 20372 },
-            colonoscopy: { ppo: 3633,   kpp: 1808  },
-            mri:         { ppo: 1982,   kpp: 662   },
-            ct:          { ppo: 1618,   kpp: 357   }
+            bypass:      { ppo: 250000, bundle: 54500 },
+            hip:         { ppo: 37701,  bundle: 22379 },
+            knee:        { ppo: 30886,  bundle: 20372 },
+            colonoscopy: { ppo: 3633,   bundle: 1808  },
+            mri:         { ppo: 1982,   bundle: 662   },
+            ct:          { ppo: 1618,   bundle: 357   }
         };
         function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
         function calcSavings() {
@@ -748,10 +744,10 @@
             const p = procs[proc];
             const numProcs = (lives / 1000) * rate * util;
             const ppoCost  = numProcs * p.ppo;
-            const kppCost  = numProcs * p.kpp;
-            const savings  = ppoCost - kppCost;
+            const bundleCost  = numProcs * p.bundle;
+            const savings  = ppoCost - bundleCost;
             document.getElementById('ppo-cost').textContent = fmt(ppoCost);
-            document.getElementById('kpp-cost').textContent  = fmt(kppCost);
+            document.getElementById('bundle-cost').textContent  = fmt(bundleCost);
             document.getElementById('savings').textContent   = fmt(savings);
         }
         calcSavings();
