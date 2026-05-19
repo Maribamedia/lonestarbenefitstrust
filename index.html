@@ -2,69 +2,53 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lone Star Benefits Trust | Bundle Pricing - District Healthcare Savings</title>
-    <meta name="description" content="Bundle Pricing for Texas and Oklahoma school districts. Cut surgical and procedure costs 50–80% below PPO with zero out-of-pocket for employees.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Lone Star Benefits Trust | SIMRP · Tax Savings · Scholarships</title>
+    <meta name="description" content="Lone Star Benefits Trust delivers IRS-compliant SIMRP wellness plans, tax savings, telemedicine, and scholarship funding for Oklahoma employers, employees & students.">
     
-    <!-- Favicon (Star motif, inline SVG) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,5 61,40 98,40 68,60 79,95 50,75 21,95 32,60 2,40 39,40' fill='%23D4AF37'/%3E%3C/svg%3E">
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+    <!-- Favicon (gold star) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23E8B86B' d='M50,10 L61,40 L94,40 L67,60 L78,90 L50,72 L22,90 L33,60 L6,40 L39,40 Z'/%3E%3C/svg%3E">
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Tailwind + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js">
-    </script>
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest">
-    </script>
-    
-    <!-- Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
-    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        midnight: '#0A1128',
                         navy: {
-                            950: '#0B1A3A',
-                            900: '#112B4F',
-                            800: '#1A3D63',
-                            700: '#23507A',
-                            600: '#2E6391',
+                            deepest: '#0B2B40',
+                            rich: '#154E5C',
                         },
-                        azure: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            200: '#bae0fd',
-                            300: '#7ccbfd',
-                            400: '#36b3fa',
-                            500: '#0c99eb',
+                        teal: {
+                            primary: '#1B7B6E',
+                            light: '#C9E9E0',
                         },
-                        star: '#D4AF37',
-                        lone: '#B22234',
-                        bundle: {
-                            DEFAULT: '#2D6A4F',
-                            light: '#40916C',
+                        gold: {
+                            DEFAULT: '#E8B86B',
+                            deep: '#d4a04a',
                         },
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    animation: {
+                        'shine': 'shine 6s linear infinite',
+                        'float': 'float 5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        shine: { 'to': { 'background-position': '200% center' } },
+                        float: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-10px)' } },
                     }
                 }
             }
@@ -72,694 +56,397 @@
     </script>
     
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { overflow-x: hidden; background: #0A1128; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0B2B40; font-family: 'Inter', sans-serif; overflow-x: hidden; }
         
-        /* Luxury Gradients */
-        .gradient-luxury { background: linear-gradient(135deg, #0B1A3A 0%, #0A1128 50%, #112B4F 100%); }
-        .text-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #D4AF37 30%, #7ccbfd 70%, #ffffff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .gradient-hero {
+            background: linear-gradient(125deg, #0B2B40 0%, #123f4f 60%, #0a2c38 100%);
+        }
+        .gradient-gold-subtle {
+            background: linear-gradient(135deg, rgba(232,184,107,0.05) 0%, rgba(27,123,110,0.02) 100%);
+        }
+        .glass-card {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(232,184,107,0.12);
+            transition: all 0.4s cubic-bezier(0.2,0.9,0.4,1.1);
+        }
+        .glass-card:hover {
+            border-color: rgba(232,184,107,0.35);
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.05);
+        }
+        .btn-solid {
+            background: #1B7B6E;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,0.3);
+        }
+        .btn-solid:hover {
+            background: #0e5e54;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px -10px rgba(27,123,110,0.4);
+        }
+        .btn-gold {
+            background: #E8B86B;
+            color: #0B2B40;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .btn-gold:hover {
+            background: #d4a04a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -8px rgba(232,184,107,0.4);
+        }
+        .btn-outline-gold {
+            border: 1.5px solid #E8B86B;
+            background: transparent;
+            transition: all 0.3s;
+        }
+        .btn-outline-gold:hover {
+            background: rgba(232,184,107,0.1);
+            border-color: #E8B86B;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FFFFFF, #E8B86B, #7ccbfd);
             background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             animation: shine 6s linear infinite;
         }
         @keyframes shine { to { background-position: 200% center; } }
         
-        /* Glass Morphism */
-        .glass-elite {
-            background: rgba(10, 17, 40, 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-        }
-        .glass-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .glass-card:hover {
-            background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
-            border-color: rgba(212, 175, 55, 0.4);
-            transform: translateY(-4px);
-        }
-        
-        /* Buttons */
-        .btn-primary {
-            background: linear-gradient(135deg, #112B4F 0%, #1A3D63 100%);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #1A3D63 0%, #23507A 100%);
-            border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.3);
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: rgba(212, 175, 55, 0.4);
-        }
-        .btn-bundle {
-            background: var(--bundle);
-            border: 1px solid var(--bundle-light);
-            transition: all 0.4s;
-        }
-        .btn-bundle:hover {
-            background: var(--bundle-light);
-        }
-        
-        /* Typography */
-        .heading-display {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-        .body-elegant {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            letter-spacing: 0.01em;
-        }
-        
-        /* Grid Pattern */
-        .grid-subtle {
-            background-image:
-                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.02) 0%, transparent 30%),
-                linear-gradient(rgba(124, 203, 253, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(124, 203, 253, 0.02) 1px, transparent 1px);
-            background-size: 100% 100%, 60px 60px, 60px 60px;
-        }
-        
-        /* Progress Line */
         .progress-line {
             position: fixed;
             top: 0;
             left: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #112B4F, #D4AF37, #7ccbfd);
-            z-index: 100;
+            height: 3px;
+            background: linear-gradient(90deg, #1B7B6E, #E8B86B, #7ccbfd);
             width: 0%;
+            z-index: 1000;
         }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0B2B40; }
+        ::-webkit-scrollbar-thumb { background: #1B7B6E; border-radius: 8px; }
         
-        /* Selection */
-        ::selection { background: rgba(212, 175, 55, 0.3); color: white; }
-        
-        /* Quote Mark */
-        .quote-mark {
+        .stat-number {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 6rem;
-            line-height: 1;
-            color: rgba(212, 175, 55, 0.2);
+            font-weight: 700;
         }
-        
-        /* Navigation Link Effect */
-        .nav-link {
-            position: relative;
-            overflow: hidden;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
+        .video-wrapper iframe {
             width: 100%;
-            height: 1px;
-            background: #D4AF37;
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .nav-link:hover::after { transform: translateX(0); }
-        
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0A1128; }
-        ::-webkit-scrollbar-thumb { background: #1A3D63; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2E6391; }
-        
-        /* Calculator specific */
-        .calc-input {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: white;
-        }
-        .calc-input:focus {
-            border-color: var(--bundle-light);
-        }
-        .savings-badge {
-            background: rgba(45,106,79,0.2);
-            border: 1px solid rgba(45,106,79,0.3);
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
-<body class="bg-midnight text-slate-200 font-sans antialiased">
+<body class="text-slate-200 antialiased">
 
-    <!-- Progress Line -->
-    <div class="progress-line" id="progressLine"></div>
+<div class="progress-line" id="progressLine"></div>
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <a href="#" class="flex items-center space-x-3 group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <div class="flex items-center justify-center w-10 h-10 border border-star/30 rounded-sm group-hover:border-star/70 transition-colors">
-                        <i data-lucide="star" class="w-6 h-6 logo-star"></i>
-                    </div>
-                    <div class="flex flex-col">
-                        <div class="flex items-baseline space-x-1">
-                            <span class="font-serif text-white text-xl tracking-wide font-semibold">LONE STAR</span>
-                            <span class="text-star text-xs ml-1">✦</span>
-                        </div>
-                        <div class="flex flex-wrap items-baseline gap-x-2">
-                            <span class="font-serif text-white text-lg tracking-wider">BENEFITS TRUST</span>
-                            <span class="text-[10px] text-slate-400 tracking-[.2em] uppercase hidden sm:inline">PROTECTION · STABILITY · STEWARDSHIP</span>
-                        </div>
-                    </div>
+<!-- Navigation (Lone Star Benefits Trust) -->
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 md:py-5 bg-navy-deepest/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+                <div class="w-8 h-8 border border-gold/40 flex items-center justify-center rounded-sm">
+                    <i data-lucide="star" class="w-4 h-4 text-gold"></i>
+                </div>
+                <div>
+                    <span class="font-serif text-white text-xl tracking-tight font-semibold">Lone Star <span class="text-gold">Benefits Trust</span></span>
+                    <div class="text-[10px] text-slate-400 tracking-wider hidden sm:block">SIMRP · TAX SAVINGS · SCHOLARSHIPS</div>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#business" class="nav-link text-sm text-slate-300 hover:text-white transition">Business</a>
+                <a href="#schools" class="nav-link text-sm text-slate-300 hover:text-white transition">Schools</a>
+                <a href="#scholarships" class="nav-link text-sm text-slate-300 hover:text-white transition">Scholarships</a>
+                <a href="#contact" class="nav-link text-sm text-slate-300 hover:text-white transition">Contact</a>
+                <a href="#contact" class="btn-outline-gold px-5 py-2 rounded-full text-sm text-gold font-medium">📞 Book a Call</a>
+            </div>
+            <button id="mobileBtn" class="md:hidden text-white p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 flex flex-col gap-4 bg-navy-deepest/95 rounded-xl p-5 border border-gold/20">
+            <a href="#business" class="text-slate-200 py-2">Business</a>
+            <a href="#schools" class="text-slate-200 py-2">Schools</a>
+            <a href="#scholarships" class="text-slate-200 py-2">Scholarships</a>
+            <a href="#contact" class="text-slate-200 py-2">Contact</a>
+            <a href="#contact" class="btn-outline-gold text-center py-2 rounded-full text-gold">Book a Call</a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 1px; background: #E8B86B; transition: width 0.3s; }
+    .nav-link:hover::after { width: 100%; }
+</style>
+
+<!-- HERO SECTION (CTAs: Free Payroll Analysis & Explore Benefits) -->
+<section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden gradient-hero">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22 opacity=%220.05%22%3E%3Cpath fill=%22%23E8B86B%22 d=%22M40,10 L46,30 L68,30 L50,45 L58,65 L40,52 L22,65 L30,45 L12,30 L34,30 Z%22/%3E%3C/svg%3E')] bg-repeat opacity-20"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-gold/30 rounded-full text-xs text-gold mb-6">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> IRS Section 105 · SIMRP
+                </div>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-tight font-medium">
+                    Wellness that works for Oklahoma.<br> 
+                    <span class="text-gradient-gold">For your people & your purpose.</span>
+                </h1>
+                <p class="text-slate-300 text-lg mt-6 leading-relaxed font-light">Expertly designed SIMRP plans that lower employer taxes, increase employee take-home pay, and fund student scholarships — all while delivering premium telemedicine & mental health support.</p>
+                <div class="grid grid-cols-3 gap-4 mt-8 py-4 border-y border-white/10">
+                    <div><span class="stat-number text-3xl text-gold font-bold">$500+</span><p class="text-xs text-slate-400">annual tax savings per employee</p></div>
+                    <div><span class="stat-number text-3xl text-gold font-bold">24/7</span><p class="text-xs text-slate-400">doctor access via telemedicine</p></div>
+                    <div><span class="stat-number text-3xl text-gold font-bold">$4</span><p class="text-xs text-slate-400">monthly scholarship donation</p></div>
+                </div>
+                <div class="flex flex-wrap gap-5 mt-8">
+                    <a href="#contact" class="btn-solid px-8 py-3.5 rounded-full text-white font-semibold">📊 Free Payroll Analysis</a>
+                    <a href="#business" class="btn-gold px-8 py-3.5 rounded-full font-semibold">✨ Explore Benefits</a>
+                </div>
+            </div>
+            <div class="hidden lg:block animate-float">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gold/5 blur-2xl rounded-2xl"></div>
+                    <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=575,fit=crop/AGBzGv0r4RS3zBqL/workforce-CMu8coAqob0Zw2JY.png" alt="Oklahoma healthcare team" class="rounded-2xl shadow-2xl border border-gold/20 w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3 Pillars: Employers, Employees, Students -->
+<section class="py-24 bg-navy-deepest/60 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-gold text-sm tracking-widest uppercase">triple impact</span>
+            <h2 class="font-serif text-4xl md:text-5xl text-white mt-3">We care for <span class="text-teal-primary">employers, employees & students</span></h2>
+            <p class="text-slate-400 mt-4">Transforming workplaces and schools across Oklahoma — making health accessible, tax savings real, and education affordable.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <div class="w-14 h-14 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5"><i data-lucide="chart-line" class="w-7 h-7 text-teal-primary"></i></div>
+                <h3 class="text-2xl font-serif text-white">For Employers</h3>
+                <p class="text-slate-400 mt-3">Reduce FICA taxes, increase retention, and offer a premium benefit at no net cost.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <div class="w-14 h-14 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5"><i data-lucide="heart" class="w-7 h-7 text-teal-primary"></i></div>
+                <h3 class="text-2xl font-serif text-white">For Employees</h3>
+                <p class="text-slate-400 mt-3">No-copay telemedicine, mental health support, and a net take-home pay increase.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <div class="w-14 h-14 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5"><i data-lucide="graduation-cap" class="w-7 h-7 text-teal-primary"></i></div>
+                <h3 class="text-2xl font-serif text-white">For Students</h3>
+                <p class="text-slate-400 mt-3">Every enrolled member funds a scholarship — helping Oklahoma students pursue higher education.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BUSINESS Section -->
+<section id="business" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 class="font-serif text-4xl md:text-5xl text-white text-center mb-4">Designed for Oklahoma Businesses</h2>
+        <p class="text-center text-slate-400 max-w-2xl mx-auto mb-16">Proven SIMRP strategy — lower taxes, happier teams, healthier culture.</p>
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="glass-card p-8 rounded-2xl">
+                <i data-lucide="coins" class="w-10 h-10 text-gold mb-5"></i>
+                <h3 class="text-2xl font-serif text-white mb-3">Substantial Tax Savings</h3>
+                <p class="text-slate-300 leading-relaxed">Using IRS code Section 105, your company can redirect payroll taxes into employee wellness. Save $500–$590 per eligible employee annually on FICA — that's hundreds of thousands of dollars for mid-sized organizations.</p>
+                <div class="mt-6 bg-teal-primary/10 border border-teal-primary/20 rounded-xl p-4"><span class="font-bold text-gold">📊 Example:</span> 250 employees → <strong class="text-white">$135,000+ yearly tax savings</strong>.</div>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <i data-lucide="hand-heart" class="w-10 h-10 text-gold mb-5"></i>
+                <h3 class="text-2xl font-serif text-white mb-3">Employee Take-Home Pay Increase</h3>
+                <p class="text-slate-300">Because premiums are pre-tax, most employees see a modest increase in net pay while gaining access to premium wellness tools, 24/7 telemedicine, and no-cost prescriptions.</p>
+                <ul class="mt-5 space-y-2">
+                    <li class="flex gap-2 items-center"><i data-lucide="check-circle" class="w-4 h-4 text-teal-primary"></i><span class="text-sm">No deductibles, no copays</span></li>
+                    <li class="flex gap-2 items-center"><i data-lucide="check-circle" class="w-4 h-4 text-teal-primary"></i><span class="text-sm">Mental health counseling included</span></li>
+                    <li class="flex gap-2 items-center"><i data-lucide="check-circle" class="w-4 h-4 text-teal-primary"></i><span class="text-sm">Anura® facial scan (AI wellness)</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="#contact" class="btn-solid px-10 py-4 rounded-full inline-flex items-center gap-2">Request Business Payroll Analysis →</a>
+        </div>
+    </div>
+</section>
+
+<!-- SCHOOLS + Educator Wellness + Video -->
+<section id="schools" class="py-24 bg-navy-deepest/40 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=538,fit=crop/AGBzGv0r4RS3zBqL/teacher_1_students-Yyv9QWWPpQSNlpPD.png" alt="Teacher and students Oklahoma" class="rounded-2xl shadow-2xl border border-gold/20">
+            </div>
+            <div>
+                <span class="text-gold text-sm uppercase tracking-wider">Supporting Oklahoma Educators</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-white mt-2">Invest in the people who shape futures</h2>
+                <p class="text-slate-300 text-lg mt-4">School districts face tight budgets, but your teachers deserve the best. Our SIMRP gives staff <strong class="text-gold">no-cost telemedicine, mental health resources, and a pay raise</strong> — all while saving the district thousands in payroll taxes.</p>
+                <ul class="mt-6 space-y-3">
+                    <li class="flex gap-3"><i data-lucide="user-md" class="w-5 h-5 text-teal-primary"></i>24/7 doctor access for educators & families</li>
+                    <li class="flex gap-3"><i data-lucide="brain" class="w-5 h-5 text-teal-primary"></i>Licensed mental health sessions</li>
+                    <li class="flex gap-3"><i data-lucide="pill" class="w-5 h-5 text-teal-primary"></i>800+ free maintenance medications</li>
+                    <li class="flex gap-3"><i data-lucide="trending-up" class="w-5 h-5 text-teal-primary"></i>Net pay increase for staff</li>
+                </ul>
+                <div class="mt-8"><a href="#contact" class="btn-gold px-8 py-3 rounded-full inline-block font-semibold">📋 Get District Quote →</a></div>
+            </div>
+        </div>
+        <!-- Video card -->
+        <div class="mt-20 glass-card rounded-2xl p-6 md:p-8">
+            <h3 class="text-2xl font-serif text-white flex items-center gap-2"><i data-lucide="video" class="w-6 h-6 text-gold"></i> How the SIMRP works: Financing & tax mechanics</h3>
+            <div class="relative w-full pt-[56.25%] mt-5 rounded-xl overflow-hidden">
+                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/9tc5DYgdQHE" title="SIMRP Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SCHOLARSHIPS section -->
+<section id="scholarships" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-gold text-sm uppercase">Legacy of opportunity</span>
+            <h2 class="font-serif text-4xl md:text-5xl text-white mt-2">Invest in Oklahoma’s Future: Scholarship Program</h2>
+            <p class="text-slate-400 mt-3">For every participating employee, we donate $4/month to a scholarship fund. Your wellness plan becomes a legacy of opportunity.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-8 rounded-2xl">
+                <i data-lucide="award" class="w-10 h-10 text-gold mb-4"></i>
+                <h3 class="text-2xl font-serif text-white">Meaningful Scholarship Funding</h3>
+                <p class="text-slate-300 mt-3">With 2,000+ employees enrolled, your district can generate <strong class="text-gold">$96,000 annually</strong> to support graduating seniors, trade students, and college-bound youth. Name the scholarship after a beloved educator — we’ll help you launch it.</p>
+                <div class="mt-5 flex items-center gap-2 text-sm bg-teal-primary/10 p-3 rounded-xl"><i data-lucide="heart" class="w-4 h-4 text-gold"></i> 100% of donations go directly to students.</div>
+            </div>
+            <div class="gradient-gold-subtle rounded-2xl p-8 border border-gold/20 flex flex-col justify-between">
+                <div><i data-lucide="gift" class="w-10 h-10 text-gold mb-4"></i>
+                <h3 class="text-2xl font-serif text-white">Honoring those who shape lives</h3>
+                <p class="text-slate-300 mt-2">Oklahoma schools can name the scholarship after a distinguished teacher, administrator, or support staff member. It's a powerful way to recognize dedication and inspire the next generation.</p>
+                </div>
+                <div class="mt-6"><a href="#contact" class="btn-outline-gold inline-block px-6 py-2 rounded-full text-gold">Learn about naming →</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust signals -->
+<section class="py-16 border-y border-white/10 bg-navy-deepest/30">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <h3 class="font-serif text-3xl text-white">Trusted & Recognized</h3>
+        <div class="flex flex-wrap justify-center gap-8 mt-6 text-gold/80 font-medium text-sm">
+            <span>The CPA Journal</span><span>IRS Code Section 105</span><span>INC. Magazine</span><span>Tax Notes</span>
+        </div>
+        <p class="max-w-2xl mx-auto text-slate-400 mt-6">Our SIMRP is designed by tax and benefits experts. We are a registered broker partner — dedicated to compliance, transparency, and genuine care.</p>
+    </div>
+</section>
+
+<!-- CONTACT SECTION – No form, only call/email/booking links -->
+<section id="contact" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-gold text-sm uppercase tracking-wider">Get started</span>
+            <h2 class="font-serif text-4xl md:text-5xl text-white mt-2">Let’s talk about your goals</h2>
+            <p class="text-slate-300 text-lg mt-4">Whether you're a business owner, HR leader, or school administrator, we’ll provide a <strong class="text-gold">free, no-obligation payroll analysis</strong> that shows your exact tax savings and employee impact.</p>
+        </div>
+        
+        <!-- Three contact methods: Call, Email, Schedule (Booking link) -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <!-- Call Now -->
+            <a href="tel:+12142976215" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
+                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
+                    <i data-lucide="phone" class="w-8 h-8 text-gold"></i>
+                </div>
+                <h3 class="text-2xl font-serif text-white mb-2">Call Now</h3>
+                <p class="text-slate-400 text-sm">Speak directly with a specialist</p>
+                <p class="text-gold font-medium mt-3 text-lg">(214) 297-6215</p>
+            </a>
+            
+            <!-- Email Us -->
+            <a href="mailto:victor@lonestartrustbenefits.org" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
+                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
+                    <i data-lucide="mail" class="w-8 h-8 text-gold"></i>
+                </div>
+                <h3 class="text-2xl font-serif text-white mb-2">Email Us</h3>
+                <p class="text-slate-400 text-sm">Send us your questions</p>
+                <p class="text-gold font-medium mt-3 text-lg">victor@lonestartrustbenefits.org</p>
+            </a>
+            
+            <!-- Schedule a Call (Booking Link) -->
+            <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
+                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
+                    <i data-lucide="calendar-clock" class="w-8 h-8 text-gold"></i>
+                </div>
+                <h3 class="text-2xl font-serif text-white mb-2">Schedule a Call</h3>
+                <p class="text-slate-400 text-sm">Pick a time that works for you</p>
+                <p class="text-gold font-medium mt-3 text-lg">15‑minute consultation →</p>
+            </a>
+        </div>
+        
+        <div class="text-center mt-12">
+            <p class="text-slate-400 text-sm">No cost, no obligation. Your data is secure and confidential.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER – simplified: only phone number and email -->
+<footer class="bg-navy-deepest/90 pt-12 pb-8 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <i data-lucide="star" class="w-5 h-5 text-gold"></i>
+                <span class="text-sm text-slate-400">Lone Star Benefits Trust</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-sm">
+                <a href="tel:+12142976215" class="flex items-center gap-2 text-slate-300 hover:text-gold transition">
+                    <i data-lucide="phone" class="w-4 h-4"></i> (214) 297-6215
                 </a>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#challenge" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Why Self-Fund</a>
-                    <a href="#bundle-diff" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Bundle Pricing</a>
-                    <a href="#how" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">How It Works</a>
-                    <a href="#savings-calc" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Calculator</a>
-                    <a href="#pricing-table" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Pricing</a>
-                    <a href="#contact" class="nav-link text-sm text-slate-400 hover:text-white transition-colors py-2">Contact</a>
-                    <div class="w-px h-4 bg-white/10"></div>
-                    <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="btn-primary px-6 py-3 text-sm text-white rounded-sm">
-                        Schedule Consultation
-                    </a>
-                </div>
-
-                <button id="mobileMenuBtn" class="md:hidden text-white p-2">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+                <a href="mailto:victor@lonestartrustbenefits.org" class="flex items-center gap-2 text-slate-300 hover:text-gold transition">
+                    <i data-lucide="mail" class="w-4 h-4"></i> victor@lonestartrustbenefits.org
+                </a>
             </div>
         </div>
-
-        <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full glass-elite border-t border-white/5">
-            <div class="px-6 py-8 space-y-4">
-                <a href="#challenge" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Why Self-Fund</a>
-                <a href="#bundle-diff" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Bundle Pricing</a>
-                <a href="#how" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">How It Works</a>
-                <a href="#savings-calc" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Calculator</a>
-                <a href="#pricing-table" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Pricing</a>
-                <a href="#contact" class="block text-slate-300 hover:text-white py-3 text-sm tracking-wide">Contact</a>
-                <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="block mt-4 btn-primary px-6 py-4 text-white text-sm text-center rounded-sm">Schedule Consultation</a>
-            </div>
+        <div class="mt-8 pt-6 text-center text-slate-500 text-xs border-t border-white/10">
+            © 2025 Lone Star Benefits Trust. All rights reserved. Independent registered broker partner providing IRS-compliant wellness and SIMRP solutions. Not affiliated with the IRS, federal government. Information does not constitute legal or tax advice.
         </div>
-    </nav>
+    </div>
+</footer>
 
-    <!-- HERO – Bundle Pricing Focus -->
-    <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
-        <div class="absolute inset-0 gradient-luxury"></div>
-        <div class="absolute inset-0 grid-subtle opacity-60"></div>
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-navy-900/30 to-transparent"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-8">
-                    <div class="inline-flex items-center space-x-3 px-4 py-2 border border-star/20 rounded-sm">
-                        <i data-lucide="star" class="w-3.5 h-3.5 text-star animate-pulse"></i>
-                        <span class="text-xs text-slate-300 tracking-widest uppercase">Bundled Pricing · Zero Out-of-Pocket</span>
-                    </div>
-                    
-                    <h1 class="heading-display text-5xl md:text-6xl lg:text-7xl text-white">
-                        Stop Overpaying<br>
-                        on <span class="text-gradient">Healthcare.</span><br>
-                        <span class="italic">Bundle Pricing</span> Cuts Costs 50–80%.
-                    </h1>
-                    
-                    <p class="text-lg text-slate-400 max-w-xl leading-relaxed body-elegant font-light">
-                        The Bundle Pricing program gives Texas and Oklahoma school districts direct access to high‑quality providers at bundled rates far below PPO pricing. Employees pay $0 out‑of‑pocket when they choose a Bundle Pricing provider.
-                    </p>
-
-                    <div class="border-l-2 border-star/40 pl-5 py-1 text-sm text-slate-400 italic max-w-xl">
-                        “Bundle Pricing is cost containment achieved the right way — through patient and provider choice, not by shifting costs onto employees.”
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="btn-primary px-8 py-4 text-white text-sm tracking-wide rounded-sm inline-flex items-center justify-center space-x-2 group">
-                            <span>Schedule a 15‑Minute Call</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="#savings-calc" class="btn-secondary px-8 py-4 text-white text-sm tracking-wide rounded-sm inline-flex items-center justify-center space-x-2">
-                            <span>Calculate Your Savings</span>
-                        </a>
-                    </div>
-
-                    <div class="pt-12 flex items-center space-x-8">
-                        <div class="text-center trust-item">
-                            <p class="text-3xl font-serif text-white countup" data-target="295">0</p>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">M+ Saved</p>
-                        </div>
-                        <div class="w-px h-10 bg-white/10"></div>
-                        <div class="text-center trust-item">
-                            <p class="text-3xl font-serif text-white countup" data-target="212">0</p>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">K+ Procedures</p>
-                        </div>
-                        <div class="w-px h-10 bg-white/10"></div>
-                        <div class="text-center trust-item">
-                            <p class="text-3xl font-serif text-white">37,128</p>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-1">in 2025</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 hidden lg:block">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-navy-900 to-midnight rounded-sm blur-2xl opacity-50"></div>
-                        <div class="relative glass-elite p-1 rounded-sm">
-                            <div class="p-6 space-y-5">
-                                <div class="flex justify-between items-baseline">
-                                    <span class="text-xs text-slate-400 uppercase tracking-widest">Bundle Pricing vs PPO</span>
-                                    <span class="text-[10px] text-bundle-light uppercase">Bundled Rates</span>
-                                </div>
-                                <div class="space-y-3">
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Coronary Bypass</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$250,000</span><span class="text-sm text-bundle-light font-semibold">$54,500</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Hip Replacement</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$37,701</span><span class="text-sm text-bundle-light font-semibold">$22,379</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Knee Replacement</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$30,886</span><span class="text-sm text-bundle-light font-semibold">$20,372</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">Colonoscopy</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$3,633</span><span class="text-sm text-bundle-light font-semibold">$1,808</span></div></div>
-                                    <div class="flex justify-between"><span class="text-sm text-slate-400">MRI</span><div class="flex gap-4"><span class="text-sm text-red-500 line-through">$1,982</span><span class="text-sm text-bundle-light font-semibold">$662</span></div></div>
-                                </div>
-                                <div class="savings-badge rounded-lg p-4 text-center mt-6">
-                                    <p class="text-3xl font-serif text-star">$295M+</p>
-                                    <p class="text-xs text-slate-400 mt-1">Total saved since 2012 across 212,000+ procedures</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 opacity-40">
-            <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
-        </div>
-    </section>
-
-    <!-- Challenge Section (Carrier Profits) – context for self-funding -->
-    <section id="challenge" class="py-32 relative">
-        <div class="absolute inset-0 bg-midnight"></div>
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-star/20 to-transparent"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="max-w-3xl mb-20">
-                <p class="text-star text-sm tracking-widest uppercase mb-4">The Problem</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">
-                    The Fully Insured <span class="italic text-slate-400">Paradox</span>
-                </h2>
-                <p class="text-slate-400 text-lg leading-relaxed font-light">
-                    While your district faces budget constraints, major carriers report record profits. The traditional model serves their shareholders—not your students or staff. That’s why self‑funding with Bundle Pricing puts you back in control.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-px bg-white/5 rounded-sm overflow-hidden">
-                <div class="bg-midnight p-8 md:p-10 group hover:bg-navy-950/50 transition-colors">
-                    <div class="flex items-center justify-between mb-8"><span class="text-xs text-slate-500 tracking-widest">NYSE: UNH</span><i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-star"></i></div>
-                    <h3 class="font-serif text-2xl text-white mb-6">UnitedHealth Group</h3>
-                    <div class="space-y-4"><div><div class="flex justify-between items-baseline mb-2"><span class="text-sm text-slate-500">Annual Revenue</span><span class="text-2xl font-serif text-white">$447.6B</span></div><div class="h-px bg-white/10"></div></div><div><div class="flex justify-between items-baseline"><span class="text-sm text-slate-500">Net Profit</span><span class="text-2xl font-serif text-star">$12.1B</span></div></div></div>
-                </div>
-                <div class="bg-midnight p-8 md:p-10 group hover:bg-navy-950/50 transition-colors">
-                    <div class="flex items-center justify-between mb-8"><span class="text-xs text-slate-500 tracking-widest">NYSE: CI</span><i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-star"></i></div>
-                    <h3 class="font-serif text-2xl text-white mb-6">Cigna</h3>
-                    <div class="space-y-4"><div><div class="flex justify-between items-baseline mb-2"><span class="text-sm text-slate-500">Quarterly Net</span><span class="text-2xl font-serif text-white">$1.3B</span></div><div class="h-px bg-white/10"></div></div><div><div class="flex justify-between items-baseline"><span class="text-sm text-slate-500">Margin Expansion</span><span class="text-2xl font-serif text-star">+18%</span></div></div></div>
-                </div>
-                <div class="bg-midnight p-8 md:p-10 group hover:bg-navy-950/50 transition-colors">
-                    <div class="flex items-center justify-between mb-8"><span class="text-xs text-slate-500 tracking-widest">NYSE: CVS</span><i data-lucide="trending-up" class="w-5 h-5 text-slate-600 group-hover:text-star"></i></div>
-                    <h3 class="font-serif text-2xl text-white mb-6">CVS Health</h3>
-                    <div class="space-y-4"><div><div class="flex justify-between items-baseline mb-2"><span class="text-sm text-slate-500">Operating Income</span><span class="text-2xl font-serif text-white">$1.3B+</span></div><div class="h-px bg-white/10"></div></div><div><div class="flex justify-between items-baseline"><span class="text-sm text-slate-500">Pharmacy Growth</span><span class="text-2xl font-serif text-star">+24%</span></div></div></div>
-                </div>
-            </div>
-
-            <div class="mt-16 text-center">
-                <p class="text-xl text-slate-300 font-light italic">
-                    "The traditional fully insured model reliably generates substantial profits—for carriers, not employers. Bundle Pricing flips that model."
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Bundle Pricing Difference – Everyone Wins -->
-    <section id="bundle-diff" class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-midnight via-navy-950 to-midnight"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <p class="text-star text-sm tracking-widest uppercase mb-4">The Bundle Pricing Difference</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Everyone Wins — <span class="italic">That's the Mechanism</span></h2>
-                <p class="text-slate-400 text-lg font-light">No plan redesign. No disruption. Just 50–80% savings below PPO prices.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card rounded-sm p-10 group">
-                    <div class="w-12 h-12 rounded-full bg-bundle/20 flex items-center justify-center mb-6 group-hover:bg-bundle/30">
-                        <i data-lucide="user" class="w-6 h-6 text-bundle-light"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Employees Win</h3>
-                    <p class="text-slate-400 leading-relaxed font-light">When an employee chooses a Bundle Pricing provider, they pay $0. No deductible, no copay. Travel and lodging covered when care isn't local. No billing surprises.</p>
-                    <span class="inline-block mt-6 bg-bundle/10 text-bundle-light text-xs font-semibold px-3 py-1 rounded-full">$0 Out-of-Pocket</span>
-                </div>
-                <div class="glass-card rounded-sm p-10 group">
-                    <div class="w-12 h-12 rounded-full bg-star/10 flex items-center justify-center mb-6 group-hover:bg-star/20">
-                        <i data-lucide="building-2" class="w-6 h-6 text-star"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Providers Win</h3>
-                    <p class="text-slate-400 leading-relaxed font-light">Bundle Pricing providers get paid via simple invoice in 10–14 days. No collections, no 90-day wait. They offer their best pricing because payment is guaranteed and immediate.</p>
-                    <span class="inline-block mt-6 bg-star/10 text-star text-xs font-semibold px-3 py-1 rounded-full">Paid in 10–14 Days</span>
-                </div>
-                <div class="glass-card rounded-sm p-10 group">
-                    <div class="w-12 h-12 rounded-full bg-azure-500/10 flex items-center justify-center mb-6 group-hover:bg-azure-500/20">
-                        <i data-lucide="trending-down" class="w-6 h-6 text-azure-400"></i>
-                    </div>
-                    <h3 class="font-serif text-2xl text-white mb-4">Health Plans Win</h3>
-                    <p class="text-slate-400 leading-relaxed font-light">Fixed, all-inclusive bundled rates replace unpredictable PPO pricing. No commissions, rebates, or percentage-of-savings fees. Transparent, flat fee structure.</p>
-                    <span class="inline-block mt-6 bg-azure-500/10 text-azure-400 text-xs font-semibold px-3 py-1 rounded-full">50–80% Below PPO</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how" class="py-32 relative">
-        <div class="absolute inset-0 bg-midnight"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <p class="text-star text-sm tracking-widest uppercase mb-4">The Process</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">How Bundle Pricing Works</h2>
-                <p class="text-slate-400 text-lg font-light">Four straightforward steps from procedure need to provider payment.</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-navy-700 border border-star/20 flex items-center justify-center mx-auto mb-6">
-                        <span class="font-serif text-2xl text-star font-bold">1</span>
-                    </div>
-                    <h4 class="text-white font-medium mb-3">Employee Needs a Procedure</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">A member is scheduled for surgery, imaging, or another covered service.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-navy-700 border border-star/20 flex items-center justify-center mx-auto mb-6">
-                        <span class="font-serif text-2xl text-star font-bold">2</span>
-                    </div>
-                    <h4 class="text-white font-medium mb-3">Bundle Pricing Provider Match</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">The member is connected to a high‑quality, pre‑contracted Bundle Pricing provider.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-navy-700 border border-star/20 flex items-center justify-center mx-auto mb-6">
-                        <span class="font-serif text-2xl text-star font-bold">3</span>
-                    </div>
-                    <h4 class="text-white font-medium mb-3">Care Delivered at $0</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">The member receives care with zero out‑of‑pocket. Travel/lodging covered if needed.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-12 h-12 rounded-full bg-navy-700 border border-star/20 flex items-center justify-center mx-auto mb-6">
-                        <span class="font-serif text-2xl text-star font-bold">4</span>
-                    </div>
-                    <h4 class="text-white font-medium mb-3">Provider Paid in Days</h4>
-                    <p class="text-slate-500 text-sm leading-relaxed">Provider receives payment in 10–14 days via simple invoice at the bundled rate.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Savings Calculator -->
-    <section id="savings-calc" class="py-32 relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-midnight to-navy-950"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <p class="text-star text-sm tracking-widest uppercase mb-4">Savings Estimator</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">How Much Could Your District Save?</h2>
-                <p class="text-slate-400">Adjust the sliders to see potential annual savings with Bundle Pricing.</p>
-            </div>
-            <div class="glass-card rounded-sm p-8 md:p-12">
-                <div class="grid md:grid-cols-2 gap-8 mb-10">
-                    <div>
-                        <label class="block text-xs text-slate-400 uppercase tracking-wider mb-3">Number of Covered Lives</label>
-                        <input type="number" id="lives" value="1000" min="100" max="10000" oninput="calcSavings()" class="calc-input w-full rounded-sm px-4 py-3 text-white focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-slate-400 uppercase tracking-wider mb-3">Select a Procedure</label>
-                        <select id="proc" onchange="calcSavings()" class="calc-input w-full rounded-sm px-4 py-3 text-white focus:outline-none bg-midnight">
-                            <option value="bypass">Coronary Artery Bypass (avg $195,500 saved)</option>
-                            <option value="hip">Hip Replacement ($15,222 avg savings)</option>
-                            <option value="knee" selected>Knee Replacement ($10,514 avg savings)</option>
-                            <option value="colonoscopy">Colonoscopy ($1,825 avg savings)</option>
-                            <option value="mri">MRI ($1,320 avg savings)</option>
-                            <option value="ct">CT Scan ($1,261 avg savings)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8 mb-10">
-                    <div>
-                        <label class="block text-xs text-slate-400 uppercase tracking-wider mb-3">Procedures per 1,000 Lives / Year</label>
-                        <input type="number" id="rate" value="3" min="0.5" max="20" step="0.5" oninput="calcSavings()" class="calc-input w-full rounded-sm px-4 py-3 text-white focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs text-slate-400 uppercase tracking-wider mb-3">PPO Utilization Rate (%)</label>
-                        <input type="number" id="util" value="100" min="1" max="100" oninput="calcSavings()" class="calc-input w-full rounded-sm px-4 py-3 text-white focus:outline-none">
-                    </div>
-                </div>
-                <div class="border-t border-white/10 pt-8 grid grid-cols-3 gap-4 text-center">
-                    <div>
-                        <div class="text-3xl font-serif text-red-400" id="ppo-cost">$0</div>
-                        <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">PPO Cost</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-serif text-bundle-light" id="bundle-cost">$0</div>
-                        <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">Bundle Pricing Cost</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-serif text-star" id="savings">$0</div>
-                        <div class="text-xs text-slate-500 mt-2 uppercase tracking-wider">Annual Savings</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Table -->
-    <section id="pricing-table" class="py-32 relative">
-        <div class="absolute inset-0 bg-midnight"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <p class="text-star text-sm tracking-widest uppercase mb-4">Real‑World Savings</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Bundle Pricing vs. PPO Pricing</h2>
-                <p class="text-slate-400 text-lg font-light">Actual procedure costs — no asterisks, no hidden fees.</p>
-            </div>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="border-b border-white/10">
-                            <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">Procedure</th>
-                            <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">PPO Network Price</th>
-                            <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">Bundle Price</th>
-                            <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">Avg Savings</th>
-                            <th class="py-4 px-6 text-xs text-slate-400 uppercase tracking-wider font-medium">% Below PPO</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-white/5">
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="py-5 px-6 text-white font-medium">Coronary Artery Bypass</td>
-                            <td class="py-5 px-6 text-red-500 line-through">$250,000</td>
-                            <td class="py-5 px-6 text-bundle-light font-semibold">$54,500</td>
-                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$195,500</span></td>
-                            <td class="py-5 px-6 text-white">78.2%</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="py-5 px-6 text-white font-medium">Hip Replacement</td>
-                            <td class="py-5 px-6 text-red-500 line-through">$37,701</td>
-                            <td class="py-5 px-6 text-bundle-light font-semibold">$22,379</td>
-                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$15,222</span></td>
-                            <td class="py-5 px-6 text-white">40.5%</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="py-5 px-6 text-white font-medium">Knee Replacement</td>
-                            <td class="py-5 px-6 text-red-500 line-through">$30,886</td>
-                            <td class="py-5 px-6 text-bundle-light font-semibold">$20,372</td>
-                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$10,514</span></td>
-                            <td class="py-5 px-6 text-white">34.9%</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="py-5 px-6 text-white font-medium">Colonoscopy</td>
-                            <td class="py-5 px-6 text-red-500 line-through">$3,633</td>
-                            <td class="py-5 px-6 text-bundle-light font-semibold">$1,808</td>
-                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$1,825</span></td>
-                            <td class="py-5 px-6 text-white">50.3%</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="py-5 px-6 text-white font-medium">MRI</td>
-                            <td class="py-5 px-6 text-red-500 line-through">$1,982</td>
-                            <td class="py-5 px-6 text-bundle-light font-semibold">$662</td>
-                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$1,320</span></td>
-                            <td class="py-5 px-6 text-white">66.7%</td>
-                        </tr>
-                        <tr class="hover:bg-white/5 transition">
-                            <td class="py-5 px-6 text-white font-medium">CT Scan</td>
-                            <td class="py-5 px-6 text-red-500 line-through">$1,618</td>
-                            <td class="py-5 px-6 text-bundle-light font-semibold">$357</td>
-                            <td class="py-5 px-6"><span class="bg-bundle/20 text-bundle-light text-xs font-bold px-3 py-1 rounded-full">$1,261</span></td>
-                            <td class="py-5 px-6 text-white">81.4%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Strip -->
-    <section class="py-24 relative bg-bundle/10">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="heading-display text-3xl md:text-5xl text-white mb-6">Your District’s Renewal Is Approaching.<br>This Conversation Can’t Wait.</h2>
-            <p class="text-slate-300 text-lg mb-10 font-light">If your plan is within 90 days of renewal, now is the time to see what Bundle Pricing can do for your budget.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-5">
-                <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="btn-primary px-10 py-4 text-white rounded-sm">Schedule a 15‑Minute Call</a>
-                <a href="#savings-calc" class="btn-secondary px-10 py-4 text-white rounded-sm">Run Your Savings Estimate</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact / Partners -->
-    <section id="contact" class="py-32 relative">
-        <div class="absolute inset-0 bg-midnight"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-20">
-                <p class="text-star text-sm tracking-widest uppercase mb-4">Get Started</p>
-                <h2 class="heading-display text-4xl md:text-5xl text-white mb-6">Two Ways to Reach Us</h2>
-                <p class="text-slate-400 text-lg font-light">Lone Star Benefits Trust is ready to help you launch Bundle Pricing for your district.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Lone Star Contact -->
-                <div class="glass-card rounded-sm p-8 md:p-10">
-                    <div class="flex items-center space-x-3 mb-8">
-                        <div class="w-10 h-10 border border-star/30 rounded-sm flex items-center justify-center"><i data-lucide="star" class="w-5 h-5 text-star"></i></div>
-                        <h3 class="font-serif text-xl text-white">Lone Star Benefits Trust</h3>
-                    </div>
-                    <div class="space-y-5 text-sm">
-                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="user" class="w-4 h-4 mt-0.5 text-star shrink-0"></i><span>Victor, Managing Consultant</span></div>
-                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="phone" class="w-4 h-4 mt-0.5 text-star shrink-0"></i><span>(214) 297-6215</span></div>
-                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="mail" class="w-4 h-4 mt-0.5 text-star shrink-0"></i><span>victor@lonestartrustbenefits.org</span></div>
-                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="building" class="w-4 h-4 mt-0.5 text-star shrink-0"></i><span>OSSBA Employee Benefits</span></div>
-                    </div>
-                </div>
-                <!-- Bundle Pricing Program Contact -->
-                <div class="glass-card rounded-sm p-8 md:p-10">
-                    <div class="flex items-center space-x-3 mb-8">
-                        <div class="w-10 h-10 border border-bundle-light/40 rounded-sm flex items-center justify-center"><span class="text-bundle-light text-lg font-bold">BP</span></div>
-                        <h3 class="font-serif text-xl text-white">Bundle Pricing Program</h3>
-                    </div>
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="phone" class="w-4 h-4 mt-0.5 text-bundle-light shrink-0"></i><span>(214) 297-6215</span></div>
-                        <div class="flex items-start space-x-3 text-slate-400"><i data-lucide="mail" class="w-4 h-4 mt-0.5 text-bundle-light shrink-0"></i><span>info@lonestartrustbenefits.org</span></div>
-                        <div class="text-xs text-slate-500 pt-4">Contact us directly to explore bundled rates for your district.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-16 relative">
-        <div class="absolute inset-0 bg-midnight"></div>
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-star/20 to-transparent"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <div class="w-8 h-8 border border-star/30 rounded-sm flex items-center justify-center"><i data-lucide="star" class="w-4 h-4 text-star"></i></div>
-                <p class="text-xs text-slate-500 tracking-wider">© 2026 Lone Star Benefits Trust™. All rights reserved.</p>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="text-slate-600 hover:text-star text-xs">Privacy</a>
-                <span class="text-slate-700">|</span>
-                <a href="#" class="text-slate-600 hover:text-star text-xs">Terms</a>
-                <span class="text-slate-700">|</span>
-                <span class="text-xs text-slate-600">PROTECTION · STABILITY · STEWARDSHIP</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        lucide.createIcons();
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Progress line
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            document.getElementById('progressLine').style.width = (winScroll / height) * 100 + '%';
-            document.getElementById('navbar').classList.toggle('glass-elite', winScroll > 50);
+<script>
+    lucide.createIcons();
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // scroll progress bar
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('progressLine').style.width = (winScroll / height) * 100 + '%';
+        const navbar = document.getElementById('navbar');
+        if(winScroll > 50) navbar.classList.add('bg-navy-deepest/95','shadow-xl');
+        else navbar.classList.remove('bg-navy-deepest/95','shadow-xl');
+    });
+    
+    // mobile menu toggle
+    const mobileBtn = document.getElementById('mobileBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if(mobileBtn) mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.querySelectorAll('#mobileMenu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
         });
-        
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-        
-        // GSAP entrance animations
-        gsap.utils.toArray('.glass-card').forEach((card, i) => {
-            gsap.from(card, { scrollTrigger: { trigger: card, start: 'top 85%' }, opacity: 0, y: 30, duration: 0.8, delay: i*0.1, ease: 'power3.out' });
-        });
-        
-        // Countup numbers in hero
-        const countups = document.querySelectorAll('.countup');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseFloat(el.dataset.target);
-                    let current = 0;
-                    const increment = target / 50;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            el.textContent = target + (target === 295 ? 'M+' : (target === 212 ? 'K+' : ''));
-                            clearInterval(timer);
-                        } else {
-                            el.textContent = Math.floor(current);
-                        }
-                    }, 20);
-                    observer.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        countups.forEach(el => observer.observe(el));
-        
-        // Savings calculator
-        const procs = {
-            bypass:      { ppo: 250000, bundle: 54500 },
-            hip:         { ppo: 37701,  bundle: 22379 },
-            knee:        { ppo: 30886,  bundle: 20372 },
-            colonoscopy: { ppo: 3633,   bundle: 1808  },
-            mri:         { ppo: 1982,   bundle: 662   },
-            ct:          { ppo: 1618,   bundle: 357   }
-        };
-        function fmt(n) { return '$' + Math.round(n).toLocaleString(); }
-        function calcSavings() {
-            const lives = parseInt(document.getElementById('lives').value) || 0;
-            const proc  = document.getElementById('proc').value;
-            const rate  = parseFloat(document.getElementById('rate').value) || 0;
-            const util  = parseFloat(document.getElementById('util').value) / 100 || 0;
-            const p = procs[proc];
-            const numProcs = (lives / 1000) * rate * util;
-            const ppoCost  = numProcs * p.ppo;
-            const bundleCost  = numProcs * p.bundle;
-            const savings  = ppoCost - bundleCost;
-            document.getElementById('ppo-cost').textContent = fmt(ppoCost);
-            document.getElementById('bundle-cost').textContent  = fmt(bundleCost);
-            document.getElementById('savings').textContent   = fmt(savings);
-        }
-        calcSavings();
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    </script>
+    });
+    
+    // GSAP fade-up animations
+    gsap.utils.toArray('.glass-card, .gradient-gold-subtle, .btn-solid, .btn-gold').forEach(el => {
+        gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 90%' }, opacity: 0, y: 20, duration: 0.7, ease: 'power2.out' });
+    });
+</script>
 </body>
 </html>
