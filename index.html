@@ -144,6 +144,10 @@
             height: 100%;
             min-height: 600px;
         }
+        /* Additional fix for contact cards: ensure consistent spacing and no overlap */
+        .contact-card-group {
+            isolation: isolate;
+        }
     </style>
 </head>
 <body class="text-slate-200 antialiased">
@@ -357,7 +361,7 @@
     </div>
 </section>
 
-<!-- CONTACT + CALENDAR EMBED -->
+<!-- CONTACT SECTION – FIXED: cards now properly spaced, no overlap, clear separation from calendar -->
 <section id="contact-cards" class="py-24 relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
@@ -366,28 +370,31 @@
             <p class="text-slate-300 text-lg mt-4">Whether you're a business owner, HR leader, or school administrator, we’ll provide a <strong class="text-gold">free, no-obligation payroll analysis</strong> that shows your exact tax savings and employee impact.</p>
         </div>
         
-        <!-- Phone, Email, Booking cards -->
-        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-20">
-            <a href="tel:+12142976215" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
-                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
+        <!-- Three contact cards: explicit grid with gap and responsive breakpoints to avoid overlap -->
+        <div class="contact-card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto mb-20">
+            <!-- Call card -->
+            <a href="tel:+12142976215" class="glass-card p-6 md:p-8 rounded-2xl text-center group transition-all hover:border-gold/40 flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mb-5 group-hover:bg-teal-primary/30 transition">
                     <i data-lucide="phone" class="w-8 h-8 text-gold"></i>
                 </div>
                 <h3 class="text-2xl font-serif text-white mb-2">Call Now</h3>
                 <p class="text-slate-400 text-sm">Speak directly with a specialist</p>
-                <p class="text-gold font-medium mt-3 text-lg">(214) 297-6215</p>
+                <p class="text-gold font-medium mt-3 text-lg break-words">(214) 297-6215</p>
             </a>
             
-            <a href="mailto:victor@lonestartrustbenefits.org" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
-                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
+            <!-- Email card -->
+            <a href="mailto:victor@lonestartrustbenefits.org" class="glass-card p-6 md:p-8 rounded-2xl text-center group transition-all hover:border-gold/40 flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mb-5 group-hover:bg-teal-primary/30 transition">
                     <i data-lucide="mail" class="w-8 h-8 text-gold"></i>
                 </div>
                 <h3 class="text-2xl font-serif text-white mb-2">Email Us</h3>
                 <p class="text-slate-400 text-sm">Send us your questions</p>
-                <p class="text-gold font-medium mt-3 text-lg">victor@lonestartrustbenefits.org</p>
+                <p class="text-gold font-medium mt-3 text-lg break-words">victor@lonestartrustbenefits.org</p>
             </a>
             
-            <div class="glass-card p-8 rounded-2xl text-center">
-                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5">
+            <!-- Booking info card (points to embed below) -->
+            <div class="glass-card p-6 md:p-8 rounded-2xl text-center flex flex-col items-center">
+                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mb-5">
                     <i data-lucide="calendar-clock" class="w-8 h-8 text-gold"></i>
                 </div>
                 <h3 class="text-2xl font-serif text-white mb-2">Book a Meeting</h3>
@@ -396,14 +403,14 @@
             </div>
         </div>
         
-        <!-- Cal.com embed (booking link) -->
-        <div id="booking-embed" class="scroll-mt-24">
-            <div class="text-center mb-6">
+        <!-- CALENDAR EMBED SECTION (clearly separated with margin and distinct container) -->
+        <div id="booking-embed" class="scroll-mt-24 mt-10">
+            <div class="text-center mb-8">
                 <span class="inline-block px-4 py-1 rounded-full bg-gold/10 text-gold text-sm font-medium backdrop-blur-sm">📅 Schedule directly — no phone tag</span>
-                <h3 class="font-serif text-3xl text-white mt-3">Select a time that fits your schedule</h3>
+                <h3 class="font-serif text-3xl text-white mt-4">Select a time that fits your schedule</h3>
                 <p class="text-slate-400 mt-1">Book a 15-minute consultation with our benefits specialist</p>
             </div>
-            <div class="cal-embed-container glass-card p-1 rounded-2xl overflow-hidden bg-navy-deepest/40">
+            <div class="cal-embed-container glass-card p-1 rounded-2xl overflow-hidden bg-navy-deepest/40 w-full">
                 <div style="width:100%; height:100%; min-height: 600px; overflow:auto" id="my-cal-inline-benefits-trust-connector"></div>
                 <script type="text/javascript">
                   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
@@ -439,7 +446,6 @@
             </div>
         </div>
         <div class="mt-8 pt-6 text-center border-t border-white/10">
-            <!-- Revised disclaimer: lonestartrustbenefits.org replaces previous entity names -->
             <p class="text-slate-500 text-xs leading-relaxed max-w-5xl mx-auto">
                 lonestartrustbenefits.org is an independent entity that provides access to educational information regarding programs utilizing federally recognized tax codes and wellness reimbursement structures that may help qualifying organizations obtain benefits through payroll tax savings. We utilize the professional services of third-party providers for the preparation, filing, and implementation of SIMRP plan documents; however, we are not owned by, affiliated with, endorsed by, or acting on behalf of such providers, the Internal Revenue Service, the U.S. Department of Labor, or the federal government. The information provided on this website is for general educational and informational purposes only and should not be construed as tax, legal, accounting, financial, or regulatory advice. We are not tax professionals, attorneys, certified public accountants, or experts in the interpretation of tax law, and we do not recommend tax strategies or make guarantees regarding tax treatment, eligibility, savings, or compliance outcomes. Individuals and organizations seeking to verify or rely upon any information presented on this website should consult with qualified tax professionals, legal counsel, payroll specialists, or other licensed advisors regarding their specific circumstances before making any financial, tax-related, legal, or benefits decisions.
             </p>
