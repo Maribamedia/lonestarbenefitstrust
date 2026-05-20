@@ -133,12 +133,16 @@
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
         }
-        .video-wrapper iframe {
-            width: 100%;
+        .cal-embed-container {
+            min-height: 620px;
+            height: auto;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            background: rgba(11, 43, 64, 0.4);
+        }
+        .cal-embed-container > div {
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+            min-height: 600px;
         }
     </style>
 </head>
@@ -146,7 +150,7 @@
 
 <div class="progress-line" id="progressLine"></div>
 
-<!-- Navigation (Lone Star Benefits Trust) -->
+<!-- Navigation -->
 <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4 md:py-5 bg-navy-deepest/80 backdrop-blur-md border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex justify-between items-center">
@@ -163,8 +167,8 @@
                 <a href="#business" class="nav-link text-sm text-slate-300 hover:text-white transition">Business</a>
                 <a href="#schools" class="nav-link text-sm text-slate-300 hover:text-white transition">Schools</a>
                 <a href="#scholarships" class="nav-link text-sm text-slate-300 hover:text-white transition">Scholarships</a>
-                <a href="#contact" class="nav-link text-sm text-slate-300 hover:text-white transition">Contact</a>
-                <a href="#contact" class="btn-outline-gold px-5 py-2 rounded-full text-sm text-gold font-medium">📞 Book a Call</a>
+                <a href="#booking-embed" class="nav-link text-sm text-slate-300 hover:text-white transition">Book now</a>
+                <a href="#contact-cards" class="btn-outline-gold px-5 py-2 rounded-full text-sm text-gold font-medium">📞 Get in touch</a>
             </div>
             <button id="mobileBtn" class="md:hidden text-white p-2">
                 <i data-lucide="menu" class="w-6 h-6"></i>
@@ -174,8 +178,8 @@
             <a href="#business" class="text-slate-200 py-2">Business</a>
             <a href="#schools" class="text-slate-200 py-2">Schools</a>
             <a href="#scholarships" class="text-slate-200 py-2">Scholarships</a>
-            <a href="#contact" class="text-slate-200 py-2">Contact</a>
-            <a href="#contact" class="btn-outline-gold text-center py-2 rounded-full text-gold">Book a Call</a>
+            <a href="#booking-embed" class="text-slate-200 py-2">Book online</a>
+            <a href="#contact-cards" class="btn-outline-gold text-center py-2 rounded-full text-gold">Contact</a>
         </div>
     </div>
 </nav>
@@ -186,7 +190,7 @@
     .nav-link:hover::after { width: 100%; }
 </style>
 
-<!-- HERO SECTION (CTAs: Free Payroll Analysis & Explore Benefits) -->
+<!-- HERO SECTION -->
 <section class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden gradient-hero">
     <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22 opacity=%220.05%22%3E%3Cpath fill=%22%23E8B86B%22 d=%22M40,10 L46,30 L68,30 L50,45 L58,65 L40,52 L22,65 L30,45 L12,30 L34,30 Z%22/%3E%3C/svg%3E')] bg-repeat opacity-20"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
@@ -206,8 +210,18 @@
                     <div><span class="stat-number text-3xl text-gold font-bold">$4</span><p class="text-xs text-slate-400">monthly scholarship donation</p></div>
                 </div>
                 <div class="flex flex-wrap gap-5 mt-8">
-                    <a href="#contact" class="btn-solid px-8 py-3.5 rounded-full text-white font-semibold">📊 Free Payroll Analysis</a>
+                    <a href="#contact-cards" class="btn-solid px-8 py-3.5 rounded-full text-white font-semibold">📊 Free Payroll Analysis</a>
                     <a href="#business" class="btn-gold px-8 py-3.5 rounded-full font-semibold">✨ Explore Benefits</a>
+                </div>
+                <!-- DIRECT PHONE & EMAIL CTAs -->
+                <div class="flex flex-wrap items-center gap-5 mt-8 pt-4 border-t border-white/10">
+                    <a href="tel:+12142976215" class="flex items-center gap-2 text-gold hover:text-white transition text-base font-medium bg-white/5 px-4 py-2 rounded-full backdrop-blur-sm">
+                        <i data-lucide="phone" class="w-4 h-4"></i> (214) 297-6215
+                    </a>
+                    <a href="mailto:victor@lonestartrustbenefits.org" class="flex items-center gap-2 text-gold hover:text-white transition text-base font-medium bg-white/5 px-4 py-2 rounded-full backdrop-blur-sm">
+                        <i data-lucide="mail" class="w-4 h-4"></i> victor@lonestartrustbenefits.org
+                    </a>
+                    <span class="text-xs text-slate-400 hidden md:inline-flex">📅 Or book directly below</span>
                 </div>
             </div>
             <div class="hidden lg:block animate-float">
@@ -220,7 +234,7 @@
     </div>
 </section>
 
-<!-- 3 Pillars: Employers, Employees, Students -->
+<!-- 3 Pillars -->
 <section class="py-24 bg-navy-deepest/60 relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-16">
@@ -272,12 +286,12 @@
             </div>
         </div>
         <div class="text-center mt-12">
-            <a href="#contact" class="btn-solid px-10 py-4 rounded-full inline-flex items-center gap-2">Request Business Payroll Analysis →</a>
+            <a href="#booking-embed" class="btn-solid px-10 py-4 rounded-full inline-flex items-center gap-2">📅 Schedule a consultation →</a>
         </div>
     </div>
 </section>
 
-<!-- SCHOOLS + Educator Wellness + Video -->
+<!-- SCHOOLS + Video -->
 <section id="schools" class="py-24 bg-navy-deepest/40 relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -294,10 +308,9 @@
                     <li class="flex gap-3"><i data-lucide="pill" class="w-5 h-5 text-teal-primary"></i>800+ free maintenance medications</li>
                     <li class="flex gap-3"><i data-lucide="trending-up" class="w-5 h-5 text-teal-primary"></i>Net pay increase for staff</li>
                 </ul>
-                <div class="mt-8"><a href="#contact" class="btn-gold px-8 py-3 rounded-full inline-block font-semibold">📋 Get District Quote →</a></div>
+                <div class="mt-8"><a href="#contact-cards" class="btn-gold px-8 py-3 rounded-full inline-block font-semibold">📋 Get District Quote →</a></div>
             </div>
         </div>
-        <!-- Video card -->
         <div class="mt-20 glass-card rounded-2xl p-6 md:p-8">
             <h3 class="text-2xl font-serif text-white flex items-center gap-2"><i data-lucide="video" class="w-6 h-6 text-gold"></i> How the SIMRP works: Financing & tax mechanics</h3>
             <div class="relative w-full pt-[56.25%] mt-5 rounded-xl overflow-hidden">
@@ -307,7 +320,7 @@
     </div>
 </section>
 
-<!-- SCHOLARSHIPS section -->
+<!-- SCHOLARSHIPS -->
 <section id="scholarships" class="py-24 relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-14">
@@ -327,7 +340,7 @@
                 <h3 class="text-2xl font-serif text-white">Honoring those who shape lives</h3>
                 <p class="text-slate-300 mt-2">Texas schools can name the scholarship after a distinguished teacher, administrator, or support staff member. It's a powerful way to recognize dedication and inspire the next generation.</p>
                 </div>
-                <div class="mt-6"><a href="#contact" class="btn-outline-gold inline-block px-6 py-2 rounded-full text-gold">Learn about naming →</a></div>
+                <div class="mt-6"><a href="#contact-cards" class="btn-outline-gold inline-block px-6 py-2 rounded-full text-gold">Learn about naming →</a></div>
             </div>
         </div>
     </div>
@@ -344,8 +357,8 @@
     </div>
 </section>
 
-<!-- CONTACT SECTION – No form, only call/email/booking links -->
-<section id="contact" class="py-24 relative">
+<!-- CONTACT + CALENDAR EMBED -->
+<section id="contact-cards" class="py-24 relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
             <span class="text-gold text-sm uppercase tracking-wider">Get started</span>
@@ -353,9 +366,8 @@
             <p class="text-slate-300 text-lg mt-4">Whether you're a business owner, HR leader, or school administrator, we’ll provide a <strong class="text-gold">free, no-obligation payroll analysis</strong> that shows your exact tax savings and employee impact.</p>
         </div>
         
-        <!-- Three contact methods: Call, Email, Schedule (Booking link) -->
-        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <!-- Call Now -->
+        <!-- Phone, Email, Booking cards -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-20">
             <a href="tel:+12142976215" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
                 <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
                     <i data-lucide="phone" class="w-8 h-8 text-gold"></i>
@@ -365,7 +377,6 @@
                 <p class="text-gold font-medium mt-3 text-lg">(214) 297-6215</p>
             </a>
             
-            <!-- Email Us -->
             <a href="mailto:victor@lonestartrustbenefits.org" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
                 <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
                     <i data-lucide="mail" class="w-8 h-8 text-gold"></i>
@@ -375,24 +386,42 @@
                 <p class="text-gold font-medium mt-3 text-lg">victor@lonestartrustbenefits.org</p>
             </a>
             
-            <!-- Schedule a Call (Booking Link) -->
-            <a href="https://cal.com/partner-discovery/lone-star-benefits-trust-connector" target="_blank" rel="noopener" class="glass-card p-8 rounded-2xl text-center group transition-all hover:border-gold/40">
-                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5 group-hover:bg-teal-primary/30 transition">
+            <div class="glass-card p-8 rounded-2xl text-center">
+                <div class="w-16 h-16 rounded-full bg-teal-primary/20 flex items-center justify-center mx-auto mb-5">
                     <i data-lucide="calendar-clock" class="w-8 h-8 text-gold"></i>
                 </div>
-                <h3 class="text-2xl font-serif text-white mb-2">Schedule a Call</h3>
-                <p class="text-slate-400 text-sm">Pick a time that works for you</p>
-                <p class="text-gold font-medium mt-3 text-lg">15‑minute consultation →</p>
-            </a>
+                <h3 class="text-2xl font-serif text-white mb-2">Book a Meeting</h3>
+                <p class="text-slate-400 text-sm">Use the interactive calendar below</p>
+                <div class="mt-3 text-gold text-sm font-medium">15 min · Discovery call</div>
+            </div>
         </div>
         
-        <div class="text-center mt-12">
-            <p class="text-slate-400 text-sm">No cost, no obligation. Your data is secure and confidential.</p>
+        <!-- Cal.com embed (booking link) -->
+        <div id="booking-embed" class="scroll-mt-24">
+            <div class="text-center mb-6">
+                <span class="inline-block px-4 py-1 rounded-full bg-gold/10 text-gold text-sm font-medium backdrop-blur-sm">📅 Schedule directly — no phone tag</span>
+                <h3 class="font-serif text-3xl text-white mt-3">Select a time that fits your schedule</h3>
+                <p class="text-slate-400 mt-1">Book a 15-minute consultation with our benefits specialist</p>
+            </div>
+            <div class="cal-embed-container glass-card p-1 rounded-2xl overflow-hidden bg-navy-deepest/40">
+                <div style="width:100%; height:100%; min-height: 600px; overflow:auto" id="my-cal-inline-benefits-trust-connector"></div>
+                <script type="text/javascript">
+                  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                  Cal("init", "benefits-trust-connector", {origin:"https://app.cal.com"});
+                  Cal.ns["benefits-trust-connector"]("inline", {
+                    elementOrSelector:"#my-cal-inline-benefits-trust-connector",
+                    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                    calLink: "partner-discovery/benefits-trust-connector",
+                  });
+                  Cal.ns["benefits-trust-connector"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+                </script>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-4">✨ No credit card required. Simple, 15-min discovery call.</p>
         </div>
     </div>
 </section>
 
-<!-- FOOTER – simplified: only phone number and email -->
+<!-- FOOTER – Updated disclaimer with lonestartrustbenefits.org and copyright 2026 -->
 <footer class="bg-navy-deepest/90 pt-12 pb-8 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -409,8 +438,12 @@
                 </a>
             </div>
         </div>
-        <div class="mt-8 pt-6 text-center text-slate-500 text-xs border-t border-white/10">
-            © 2025 Lone Star Benefits Trust. All rights reserved. Independent registered broker partner providing IRS-compliant wellness and SIMRP solutions. Not affiliated with the IRS, federal government. Information does not constitute legal or tax advice.
+        <div class="mt-8 pt-6 text-center border-t border-white/10">
+            <!-- Revised disclaimer: lonestartrustbenefits.org replaces previous entity names -->
+            <p class="text-slate-500 text-xs leading-relaxed max-w-5xl mx-auto">
+                lonestartrustbenefits.org is an independent entity that provides access to educational information regarding programs utilizing federally recognized tax codes and wellness reimbursement structures that may help qualifying organizations obtain benefits through payroll tax savings. We utilize the professional services of third-party providers for the preparation, filing, and implementation of SIMRP plan documents; however, we are not owned by, affiliated with, endorsed by, or acting on behalf of such providers, the Internal Revenue Service, the U.S. Department of Labor, or the federal government. The information provided on this website is for general educational and informational purposes only and should not be construed as tax, legal, accounting, financial, or regulatory advice. We are not tax professionals, attorneys, certified public accountants, or experts in the interpretation of tax law, and we do not recommend tax strategies or make guarantees regarding tax treatment, eligibility, savings, or compliance outcomes. Individuals and organizations seeking to verify or rely upon any information presented on this website should consult with qualified tax professionals, legal counsel, payroll specialists, or other licensed advisors regarding their specific circumstances before making any financial, tax-related, legal, or benefits decisions.
+            </p>
+            <p class="text-slate-600 text-xs mt-4">© 2026 Lone Star Benefits Trust. All rights reserved.</p>
         </div>
     </div>
 </footer>
@@ -435,7 +468,7 @@
     if(mobileBtn) mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     document.querySelectorAll('#mobileMenu a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
     
-    // Smooth scroll for anchors
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const target = document.querySelector(this.getAttribute('href'));
@@ -443,7 +476,7 @@
         });
     });
     
-    // GSAP fade-up animations
+    // GSAP animations
     gsap.utils.toArray('.glass-card, .gradient-gold-subtle, .btn-solid, .btn-gold').forEach(el => {
         gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 90%' }, opacity: 0, y: 20, duration: 0.7, ease: 'power2.out' });
     });
